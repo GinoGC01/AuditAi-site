@@ -1,0 +1,58 @@
+---
+interface Props {
+  exampleDescription: string;
+  images?: string[];
+  files?: string[];
+}
+
+const { exampleDescription, images = [], files = [] } = Astro.props
+const fileNames:string[] = []
+
+files?.forEach((f:string) => {
+  const string = f
+  console.log(typeof (f))
+  string.split('/').pop()
+    ? fileNames.push(f.split('/').pop()!)
+    : fileNames.push('archivo')
+})
+
+---
+
+<div class="mt-10 w-full bg-neutral-900/60 border border-neutral-700 rounded-xl shadow-lg p-6">
+  <!-- Título -->
+  <h2 class="text-xl md:text-2xl font-semibold text-white mb-4">Ejemplo práctico</h2>
+
+  <!-- Descripción -->
+  <p class="text-slate-300 mb-6">{exampleDescription}</p>
+
+  <!-- Galería de imágenes -->
+  {images.length > 0 && (
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 gap-6 mb-6">
+      {images.map((src, i) => (
+        <div class="rounded-lg overflow-hidden border border-neutral-700 shadow-md hover:scale-105 transition">
+          <img src={src} alt={`Ejemplo ${i + 1}`} class="w-full h-auto object-cover" />
+        </div>
+      ))}
+    </div>
+  )}
+
+  <!-- Archivos descargables -->
+  {files.length > 0 && (
+    <div class="mt-4">
+      <h3 class="text-lg font-semibold text-white mb-2">Archivos utilizados</h3>
+      <ul class="list-disc list-inside space-y-2 text-slate-400">
+        {files.map((file, i) => (
+          <li>
+            <a
+              href={file}
+              download={fileNames[i]}
+              class="text-blue-400 hover:underline"
+            >
+              {fileNames[i]}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</div>

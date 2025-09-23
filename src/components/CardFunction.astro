@@ -1,0 +1,68 @@
+---
+import heroImage1 from '../assets/audit4.jpg'
+import heroImage2 from '../assets/audit3.jpg'
+import heroImage3 from '../assets/audit2.jpg'
+import heroImage4 from '../assets/audit1.jpg'
+
+const { img, i } = Astro.props
+
+const images = [
+  heroImage1,
+  heroImage2,
+  heroImage3,
+  heroImage4
+]
+
+const description = [
+  'Analiza documentos financieros en PDF y Excel con precisión y rapidez.',
+  'Extrae reportes automáticamente y controla ingresos, gastos e impuestos en segundos.',
+  'Genera reportes claros y detallados para una mejor toma de decisiones.',
+  'Detecta anomalías y errores en tus datos contables al instante.'
+]
+const titulos = [
+  'Análisis de docs. financieros',
+  'Extracción automática de reportes',
+  'Generación de reportes detallados',
+  'Estrategias posibles de ahorro'
+];
+---
+
+<div class="w-full max-w-96 h-60 rounded-lg overflow-hidden relative shadow-lg transition-transform transform hover:scale-105 mb-4 open-btn cursor-pointer" id={'card-function-' + i}>
+    <img src={img.src} class="w-full h-full absolute top-0 left-0 aspect-square object-cover object-bot" />
+    <div class="bg-black/50 backdrop-blur-lg w-full h-20 z-10 absolute bottom-0 px-5 py-2 flex flex-col">
+        <span class="text-white font-semibold">{titulos[i]}</span>
+        <span class="text-white text-[0.8rem]">{description[i]}</span>
+    </div>
+</div>
+
+<div id={'modal-' + i} class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden modal w-full h-full filter backdrop-blur-sm">
+    <div class="relative rounded-lg p-4">
+        <img src={images[i].src} class="max-w-full max-h-[80vh] rounded image" />
+    </div>
+</div>
+
+<script type="module" is:inline>
+const openBtn = document.querySelectorAll('.open-btn')
+const modal = document.querySelectorAll('.modal')
+const image = document.querySelectorAll('.image')
+
+openBtn?.forEach((element, index) => {
+  element.addEventListener('click', () => {
+    modal[index].classList.remove('hidden')
+  })
+})
+
+modal?.forEach((element, index) => {
+  element.addEventListener('click', (event) => {
+    if (event.target === element) {
+      modal[index].classList.add('hidden')
+    }
+  })
+})
+
+image?.forEach((element, index) => {
+  element.addEventListener('click', () => {
+    modal[index].classList.add('hidden')
+  })
+})
+</script>

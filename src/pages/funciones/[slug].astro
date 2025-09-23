@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { funciones } from '../../data/funciones.ts'
+import Header from '../../components/Header.astro'
+import Example from '../../components/functions/Example.astro'
+
+export async function getStaticPaths () {
+  return funciones.map((f) => ({
+    params: { slug: f.slug },
+    props: f
+  }))
+}
+
+const { title, description, content, icon, bullets, example } = Astro.props;
+---
+
+<Layout title={`${title} | AuditAi`}>
+    <main class="bg-neutral-950 text-white md:px-40 md:py-6">
+        <Header/>
+        <section class="mt-12 w-full flex flex-col items-center text-center px-4 md:px-0">
+            <!-- Ícono grande -->
+            <span
+            class="text-5xl md:text-6xl mb-6 drop-shadow-lg"
+            transition:name={`${title}-${icon}`}
+            >
+            {icon}
+            </span>
+
+            <!-- Título -->
+            <h1
+            class="text-3xl md:text-5xl font-bold text-white tracking-tight"
+            transition:name={title}
+            >
+            {title}
+            </h1>
+
+            <!-- Descripción -->
+            <p class="text-slate-300 mt-4 max-w-2xl text-lg">
+            {description}
+            </p>
+
+            <!-- Contenido principal -->
+            <div class="mt-10 max-w-3xl text-left text-slate-300 leading-relaxed space-y-6">
+            <p class="text-base md:text-lg">{content}</p>
+
+            {bullets && bullets.length > 0 && (
+                <ul class="mt-6 list-disc list-inside space-y-2 text-slate-400">
+                {bullets.map((b) => (
+                    <li class="hover:text-white transition">{b}</li>
+                ))}
+                </ul>
+            )}
+
+            {example && (
+                <Example
+                    exampleDescription={example.exampleDescription}
+                    images={example.images}
+                    files={example.files}
+                />
+            )}
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-12 flex flex-col md:flex-row gap-4">
+            <a
+                href="/contacto"
+                class="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-teal-400 text-white font-semibold shadow-lg hover:scale-105 transition"
+            >
+                Solicitar demo
+            </a>
+            <a
+                href="/funciones"
+                class="px-6 py-3 rounded-xl border border-slate-600 text-slate-300 hover:bg-slate-800/50 transition"
+            >
+                ← Volver a funciones
+            </a>
+            </div>
+        </section>
+    </main>
+
+</Layout>

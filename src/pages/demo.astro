@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+---
+
+<Layout title="Demo | AuditAi">
+    <main class="z-50 bg-transparent md:p-6 md:px-40">
+        <Header/>
+        <section class="mt-20 w-full flex flex-col items-center text-center px-6 md:px-0">
+            <h1 class="text-3xl md:text-5xl font-bold text-white">
+            Descubre cómo funciona <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">AuditAi</span>
+            </h1>
+
+            <p class="text-slate-300 mt-6 max-w-2xl">
+            Mira esta demo en video y comprobá cómo AuditAi transforma resúmenes bancarios y planillas en reportes listos para presentar.
+            La manera más simple y rápida de optimizar la contabilidad de tu estudio o empresa.
+            </p>
+
+            <!-- Video -->
+            <div class="mt-10 w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-700">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/3H0SLWK4J9M?si=nKFTSaxsab1vv80g"
+                    title="Demo AuditAi"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <div class="mt-6 text-slate-300 max-w-2xl text-left flex gap-2 md:flex-row flex-col items-center">
+                <h3>Archivo utilizado para la DEMO: </h3>
+                <a href="/demo/Resumen-BSE-2023.pdf" download class=" block text-blue-500 md:hover:underline"> Resumen-BSE-2023.pdf</a>
+            </div>
+            <span class="text-s text-gray-500 w-full text-center md:max-w-2xl ">Contiene mas de 200 páginas! </span>
+
+            <!-- Features -->
+
+            <div class="mt-14 grid md:grid-cols-3 gap-8 text-left text-slate-300 max-w-5xl">
+            <div class="bg-zinc-900/50 p-6 rounded-2xl shadow-md border border-slate-700 hover:border-teal-400 transition">
+                <h3 class="text-xl font-semibold text-white mb-3">⏱ Ahorro de tiempo</h3>
+                <p>Olvidate de cargar datos manualmente. AuditAi procesa resúmenes y planillas en segundos, liberando horas para tareas estratégicas.</p>
+            </div>
+            <div class="bg-zinc-900/50 p-6 rounded-2xl shadow-md border border-slate-700 hover:border-teal-400 transition">
+                <h3 class="text-xl font-semibold text-white mb-3">📊 Reportes listos</h3>
+                <p>Obtén informes claros, con gráficos y hallazgos automáticos, listos para presentar a clientes o usar en decisiones internas.</p>
+            </div>
+            <div class="bg-zinc-900/50 p-6 rounded-2xl shadow-md border border-slate-700 hover:border-teal-400 transition">
+                <h3 class="text-xl font-semibold text-white mb-3">⚡ Detección de errores</h3>
+                <p>AuditAi señala inconsistencias y movimientos sospechosos que podrían pasar desapercibidos en una revisión manual.</p>
+            </div>
+            </div>
+
+            <div class="mt-16">
+            <a href="/contacto" class="bg-gradient-to-r from-blue-600 to-teal-400 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:opacity-90 transition">
+                Probar AuditAi en tu estudio →
+            </a>
+            </div>
+        </section>
+    </main>
+</Layout>

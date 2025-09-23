@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Contacto | AuditAi">
+  <main class="bg-neutral-950 text-white md:px-40 md:py-6 ">
+    <!-- HEADER -->
+
+    <Header/>
+
+    <!-- CONTACT SECTION -->
+    <section class="mt-16 w-full flex flex-col items-center text-center px-4 md:px-0">
+
+      <h1 class="text-4xl md:text-5xl font-bold text-white">
+        Hablemos de tu <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">contabilidad inteligente</span>
+      </h1>
+      <p class="text-slate-300 mt-6 max-w-2xl">
+        Completá el formulario y un especialista de AuditAi te responderá a la brevedad.
+        Estamos listos para ayudarte a automatizar tareas y optimizar tu tiempo.
+      </p>
+
+      <!-- FORM -->
+      <form class="mt-12 w-full max-w-2xl bg-neutral-950 py-8 px-4 rounded-2xl shadow-xl border border-slate-800">
+        <div class="mb-6 text-left">
+          <label for="nombre" class="block text-slate-300 mb-2">Nombre completo</label>
+          <input id="nombre" type="text" required
+            class="w-full px-4 py-3 rounded-lg bg-zinc-900 text-white placeholder-slate-500 border border-slate-700 focus:outline-none focus:border-blue-500"
+            placeholder="Ej: María López" />
+        </div>
+
+        <div class="mb-6 text-left">
+          <label for="email" class="block text-slate-300 mb-2">Correo electrónico</label>
+          <input id="email" type="email" required
+            class="w-full px-4 py-3 rounded-lg bg-zinc-900 text-white placeholder-slate-500 border border-slate-700 focus:outline-none focus:border-blue-500"
+            placeholder="ejemplo@correo.com" />
+        </div>
+
+        <div class="mb-6 text-left">
+          <label for="mensaje" class="block text-slate-300 mb-2">Mensaje</label>
+          <textarea id="mensaje" rows="5" required
+            class="w-full px-4 py-3 rounded-lg bg-zinc-900 text-white placeholder-slate-500 border border-slate-700 focus:outline-none focus:border-blue-500 resize-none"
+            placeholder="Contanos qué necesitás o cómo podemos ayudarte..."></textarea>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-blue-600 to-teal-400 text-white font-semibold text-lg py-3 rounded-lg hover:opacity-90 transition-opacity">
+          Enviar mensaje
+        </button>
+      </form>
+
+      <!-- EXTRA INFO -->
+      <div class="mt-16 text-slate-400">
+        <p>¿Preferís otro canal? Escribinos a
+          <a href="mailto:contacto@auditai.com" class="text-blue-400 hover:underline">contacto@auditai.com</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+</Layout>
