@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import { funciones } from '../../data/funciones.ts'
-import Header from '../../components/Header.astro'
 import Example from '../../components/functions/Example.astro'
 
 export async function getStaticPaths () {
@@ -14,9 +13,8 @@ export async function getStaticPaths () {
 const { title, description, content, icon, bullets, example } = Astro.props;
 ---
 
-<Layout title={`${title} | AuditAi`}>
-    <main class="bg-neutral-950 text-white md:px-40 md:py-6">
-        <Header/>
+<Layout title={`${title} | AuditAi` } fill1="#19707a" fill2="#4e197a">
+    <main class=" text-white md:px-40 md:py-6">
         <section class="mt-12 w-full flex flex-col items-center text-center px-4 md:px-0">
             <!-- Ícono grande -->
             <span

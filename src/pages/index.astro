@@ -7,15 +7,13 @@ import heroImage4 from '../assets/estrategia.jpg'
 import info1Image from '../assets/info1audit.jpg'
 import info2Image from '../assets/info2audit.jpg'
 import CardFunction from '../components/CardFunction.astro'
-import Header from '../components/Header.astro'
 import CarruselComoFunciona from '../components/index/CarruselComoFunciona.astro'
 ---
 
-<Layout title="AuditAi">
+<Layout title="AuditAi" fill1="#224466" fill2="#224466">
 
   <main class="z-50 bg-transparent md:p-6 md:px-40">
     <!-- HEADER -->
-    <Header/>
 
     <!-- HERO -->
     <section class="mt-12 w-auto justify-center items-center flex flex-col ">
@@ -24,16 +22,16 @@ import CarruselComoFunciona from '../components/index/CarruselComoFunciona.astro
         <span class="text-slate-300 font-semibold text-sm px-4 md:text-[0.8rem]">Audita tus finanzas con IA 🚀</span>
       </div>
 
-      <h1 class="text-6xl text-white w-full md:w-[43rem] text-center font-bold mt-10 px-4 md:px-0">
+      <h1 class="text-6xl text-white w-full md:w-[43rem] text-center font-bold mt-10 px-4 md:px-0" >
        Convierte horas de trabajo contable en minutos con <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">AuditAi</span>
       </h1>
       <h2 class="text-slate-300 mt-10 text-center md:text-left text-2xl px-4 md:px-0">
         Análisis automático de Cuentas bancarias, Gastos e Impuestos!
       </h2>
 
-      <button class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-4 py-2 rounded-xl mt-10 flex items-center gap-2">
+      <a href="/contacto" class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-4 py-2 rounded-xl mt-10 flex items-center gap-2 pointer">
         Prueba gratuita
-      </button>
+      </a>
 
       <div class="flex gap-4 w-full mt-20 px-4 md:px-0 xl:px-36 grid grid-cols-1 md:grid-cols-4">
         {[heroImage1, heroImage2, heroImage3, heroImage4].map((img, i) => (
@@ -53,9 +51,9 @@ import CarruselComoFunciona from '../components/index/CarruselComoFunciona.astro
         <p class="text-slate-300 text-[0.7rem] mt-4">
           AuditAi lee automáticamente PDFs y archivos Excel, calcula ganancias, gastos e impuestos, y detecta anomalías. Ahorra tiempo y minimiza errores en tu contabilidad.
         </p>
-        <button class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-16 py-2 rounded-lg mt-10 w-full md:w-auto justify-center flex items-center gap-2">
+        <a href="/contacto" class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-16 py-2 rounded-lg mt-10 w-full md:w-auto justify-center flex items-center gap-2 pointer">
           Probar AuditAi
-        </button>
+        </a>
       </div>
     </section>
 
@@ -75,17 +73,17 @@ import CarruselComoFunciona from '../components/index/CarruselComoFunciona.astro
         <p class="text-slate-300 text-[0.7rem] mt-4">
           Sube los resúmenes financieros y AuditAi genera reportes claros y estructurados en segundos. Identifica impuestos, ganancias y gastos sin complicaciones.
         </p>
-        <button class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-16 py-2 rounded-lg mt-10 w-full md:w-auto justify-center flex items-center gap-2">
+        <a href="/contacto" class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-16 py-2 rounded-lg mt-10 w-full md:w-auto justify-center flex items-center gap-2 pointer">
           Generar reporte
-        </button>
+        </a>
       </div>
       <img src={info2Image.src} class="h-auto md:w-96 w-full rounded-xl" />
     </section>
 
     <!-- CONFIANZA -->
     <section class="w-auto justify-center items-center flex flex-col mt-20 px-4 md:px-0">
-      <h3 class="text-3xl md:text-4xl text-white w-full md:w-[43rem] text-center font-semibold mt-10 mb-10">
-        <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">Transforma <span class="text-white">el esfuerzo manual en</span> resultados Automaticos</span>
+      <h3 class="text-3xl md:text-4xl text-white w-full md:w-[43rem] text-center font-semibold mt-10 mb-10 ">
+        <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text ">Transforma <span class="text-white">el esfuerzo manual en</span> resultados Automaticos</span>
       </h3>
     </section>
 

@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+---
+<Layout title="Políticas de Privacidad y Términos | AuditAi" fill1="#224466" fill2="#224466">
+<!-- Wrapper -->
+    <main class="text-white md:py-6  md:px-40 md:max-w-[70%] md:m-auto px-6 py-4">
+
+      <!-- TITULO GENERAL -->
+      <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent mb-14 text-center">
+        Políticas de Privacidad & Términos de Uso
+      </h1>
+
+      <!-- ================= PRIVACIDAD ================= -->
+      <section id="privacidad" class="mb-20">
+        <h2 class="text-3xl font-bold text-teal-400 mb-6">Políticas de Privacidad</h2>
+
+        <p class="mb-4 text-slate-300">
+          En <strong>AuditAi</strong> (en adelante, “la Plataforma”), valoramos y protegemos la privacidad de nuestros usuarios.
+          Esta política describe cómo recopilamos, utilizamos y protegemos tu información cuando utilizás nuestros servicios de análisis automatizado de documentos financieros y contables.
+        </p>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">1. Información que recopilamos</h3>
+        <ul class="list-disc pl-6 text-slate-400 mb-4">
+          <li>Documentos cargados por el usuario (PDF, Excel u otros formatos financieros).</li>
+          <li>Datos de contacto como nombre, correo electrónico o razón social.</li>
+          <li>Información técnica (dirección IP, navegador, actividad de uso).</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">2. Uso de la información</h3>
+        <p class="mb-4 text-slate-300">
+          Utilizamos los datos únicamente para:
+        </p>
+        <ul class="list-disc pl-6 text-slate-400 mb-4">
+          <li>Procesar y generar reportes contables mediante inteligencia artificial.</li>
+          <li>Mejorar el rendimiento de la Plataforma.</li>
+          <li>Comunicaciones técnicas o de soporte.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">3. Conservación y eliminación</h3>
+        <p class="mb-4 text-slate-300">
+          Los documentos procesados pueden ser eliminados automáticamente luego de su análisis, salvo que el usuario opte por conservarlos en la cuenta.
+          <!-- REEMPLAZAR si es otra política -->
+        </p>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">4. Derechos del usuario</h3>
+        <p class="mb-4 text-slate-300">
+          Podés solicitar acceso, rectificación o eliminación de tus datos escribiendo a
+          <a href="https://t.me/Ginoogg" target="_blank" class="text-teal-400 underline">Telegram</a>
+        </p>
+      </section>
+
+      <section id="terminos">
+        <h2 class="text-3xl font-bold text-teal-400 mb-6">Términos y Condiciones de Uso</h2>
+
+        <p class="mb-4 text-slate-300">
+            El uso de la plataforma <strong>AuditAi</strong> implica la aceptación plena de los siguientes términos. Si el usuario no está de acuerdo con alguna de las condiciones aquí expuestas, deberá abstenerse de utilizar el servicio.
+        </p>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">1. Naturaleza del servicio</h3>
+        <p class="mb-4 text-slate-300">
+            AuditAi es una herramienta automatizada de asistencia contable basada en inteligencia artificial. Analiza documentos financieros cargados por el usuario (como extractos bancarios en PDF o Excel) y genera reportes, resúmenes y hallazgos estimativos.
+            <strong>No constituye asesoramiento contable, fiscal o legal profesional</strong>. Las recomendaciones generadas deben ser verificadas por un contador matriculado o responsable autorizado.
+        </p>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">2. Alcance y limitaciones del procesamiento</h3>
+        <ul class="list-disc pl-6 text-slate-400 mb-4">
+            <li>AuditAi puede procesar documentos con un alcance máximo de <strong>dos meses por carga</strong>.</li>
+            <li>Los archivos se dividen internamente en fragmentos ("chunks") para su análisis. El sistema admite hasta <strong>30 chunks por documento</strong>; si se supera ese límite, el análisis puede ser incompleto.</li>
+            <li>Los resultados se generan en base a inferencias automáticas que pueden contener <strong>errores, interpretaciones incorrectas o clasificaciones imprecisas</strong>.</li>
+            <li>Para obtener resultados válidos, el usuario debe proporcionar <strong>instrucciones claras y contexto específico</strong> en cada solicitud.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">3. Uso exclusivo de documentos propios</h3>
+        <p class="mb-4 text-slate-300">
+            AuditAi procesa solamente los documentos que pertenezcan al usuario registrado. El sistema filtra cada archivo mediante identificadores seguros (<em>metadata.user_telegram_id</em>) y <strong>rechaza automáticamente cualquier intento de acceder a documentos ajenos</strong>.
+            El usuario declara ser propietario o estar autorizado para utilizar los documentos que carga.
+        </p>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">4. Responsabilidad del usuario</h3>
+        <p class="mb-4 text-slate-300">
+            El usuario es responsable de:
+        </p>
+        <ul class="list-disc pl-6 text-slate-400 mb-4">
+            <li>Verificar manualmente cualquier resultado generado por la plataforma.</li>
+            <li>No utilizar los informes como documentación oficial sin revisión profesional.</li>
+            <li>No cargar información ilegal, falsa o de terceros sin autorización.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">5. Exclusión de responsabilidad</h3>
+        <p class="mb-4 text-slate-300">
+            AuditAi se ofrece “tal como está”, sin garantías de precisión absoluta. El usuario acepta que pueden existir <strong>errores de interpretación, cálculos inexactos o fallos de lectura</strong>. Bajo ninguna circunstancia AuditAi será responsable por decisiones financieras, fiscales o legales tomadas exclusivamente en base a los resultados generados.
+        </p>
+
+        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">6. Jurisdicción</h3>
+        <p class="mb-4 text-slate-300">
+            Cualquier disputa relacionada con el uso del servicio será resuelta bajo las leyes de <strong>Argentina</strong>, salvo que se acuerde lo contrario por escrito.
+        </p>
+
+        <p class="mt-8 text-center text-slate-400">
+            Para consultas legales o soporte, escribir a
+            <a href="https://t.me/Ginoogg" target="_blank" class="text-teal-400 underline">Telegram</a>.
+        </p>
+        </section>
+
+    </main>
+</Layout>
