@@ -12,7 +12,7 @@
     "@justinribeiro/lite-youtube": "^1.8.2",
     "@tailwindcss/vite": "^4.1.13",
     "alpinejs": "^3.13.5",
-    "astro": "^5.13.8",
+    "astro": "^5.16.0",
     "tailwindcss": "^4.1.13",
     "tailwindcss-animated": "^1.0.1"
   },

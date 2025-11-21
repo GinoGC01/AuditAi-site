@@ -3,6 +3,7 @@ import heroImage1 from '../assets/audit4.jpg'
 import heroImage2 from '../assets/audit3.jpg'
 import heroImage3 from '../assets/audit2.jpg'
 import heroImage4 from '../assets/audit1.jpg'
+import { Image } from 'astro:assets'
 
 const { img, i } = Astro.props
 
@@ -28,7 +29,7 @@ const titulos = [
 ---
 
 <div class="w-full max-w-96 h-60 rounded-lg overflow-hidden relative shadow-lg transition-transform transform hover:scale-105 mb-4 open-btn cursor-pointer" id={'card-function-' + i}>
-    <img src={img.src} class="w-full h-full absolute top-0 left-0 aspect-square object-cover object-bot" />
+    <Image src={img} alt={description[i]} class="w-full h-full absolute top-0 left-0 aspect-square object-cover object-bot" />
     <div class="bg-black/50 backdrop-blur-lg w-full h-20 z-10 absolute bottom-0 px-5 py-2 flex flex-col">
         <span class="text-white font-semibold">{titulos[i]}</span>
         <span class="text-white text-[0.8rem]">{description[i]}</span>

@@ -23,6 +23,19 @@
           <a href="/nosotros" class="text-sm mt-3 hover:opacity-50">Acerca de nosotros</a>
           <a href="/contacto" class="text-sm mt-2 hover:opacity-50">Contacto</a>
         </div>
+           <ul class="flex  flex-col pl-4 md:pl-20 mb-4 md:mb-0">
+          {['🔒 Encriptación de extremo a extremo',
+            '🇦🇷 Datos alojados en Argentina', 'Cumplimiento GDPR y Ley 25.326', '📞 Soporte en español 24/7'].map((item) => {
+            return (
+              <li class="flex items-center gap-2 text-slate-500 text-sm mt-2">
+                {item === 'Cumplimiento GDPR y Ley 25.326'
+                  ? <span class="flex items-center gap-1"><span class="text-2xl text-green-400">✓</span> {item}</span>
+                  : item
+
+                }
+              </li>)
+          })}
+        </ul>
         <div class="text-slate-500 text-sm text-center mt-6 mb-4">
             &copy; 2025 AuditAi. Todos los derechos reservados.
         </div>
