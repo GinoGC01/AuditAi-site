@@ -1,0 +1,544 @@
+---
+// Planes.astro - CORREGIDO URGENTE
+import Layout from '../layouts/Layout.astro'
+
+---
+
+<Layout title="Planes y Precios - AuditAi" fill1="#0f172a" fill2="#1e293b">
+  <main class="min-h-screen text-white">
+
+    <!-- HERO -->
+    <section class="pt-16 pb-12 px-6 max-w-6xl mx-auto">
+      <div class="text-center">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-blue-900 bg-opacity-30 border border-blue-500 border-opacity-30 rounded-full py-2 px-5 mb-6">
+          <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+          <span class="text-blue-300 font-medium text-sm">Nuevos precios desde $49.900/mes</span>
+        </div>
+
+        <!-- Título -->
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto">
+          Elegí el plan que hace
+          <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">
+            crecer tu estudio
+          </span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8">
+          Ahorrá <strong class="text-white">15 horas semanales</strong> en análisis manual.
+          Precios en pesos, sin permanencia y con garantía de 30 días.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+          <a
+            href="https://t.me/ClariTaxBot"
+            target="_blank"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl transition-all w-full sm:w-auto text-center"
+          >
+            📱 Probar Gratis en Telegram
+          </a>
+
+          <a
+            href="#comparativa"
+            class="border-2 border-slate-600 hover:border-blue-500 text-white px-8 py-4 rounded-xl transition-all w-full sm:w-auto text-center"
+          >
+            Ver comparativa completa
+          </a>
+        </div>
+
+        <p class="text-sm text-slate-400">Sin tarjeta • 5 análisis gratis</p>
+      </div>
+    </section>
+
+    <!-- PRICING CARDS -->
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <!-- FREE -->
+        <article class="bg-slate-800 border border-slate-700 rounded-2xl p-8">
+          <div class="mb-6">
+            <div class="w-12 h-12 bg-slate-700 rounded-xl flex items-center justify-center text-2xl mb-4">
+              🆓
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">Plan Free</h3>
+            <p class="text-slate-400 text-sm mt-1">Perfecto para probar</p>
+          </div>
+
+          <div class="border-t border-slate-700 pt-6 mb-6">
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-5xl font-bold text-white">$0</span>
+              <span class="text-slate-400">/mes</span>
+            </div>
+          </div>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>5 análisis</strong> mensuales</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Documentos hasta <strong>1MB</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Análisis básico ingresos/egresos</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Soporte por email</span>
+            </li>
+          </ul>
+
+          <a
+            href="https://t.me/ClariTaxBot"
+            target="_blank"
+            class="block text-center bg-slate-700 hover:bg-slate-600 text-white font-semibold px-6 py-3 rounded-xl transition-all mb-3"
+          >
+            Comenzar Gratis
+          </a>
+          <p class="text-center text-xs text-slate-500">Sin tarjeta • Sin compromiso</p>
+        </article>
+
+        <!-- PRO - DESTACADA -->
+        <article class="relative bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 border-2 border-blue-400 transform lg:scale-105">
+
+          <!-- Badge -->
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-2 rounded-full font-bold text-sm">
+            ⭐ MÁS ELEGIDO
+          </div>
+
+          <div class="mb-6 mt-4">
+            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center text-2xl mb-4">
+              ⚡
+            </div>
+
+            <h3 class="text-3xl font-bold text-white">Plan Profesional</h3>
+            <p class="text-blue-100 text-sm mt-1">Para estudios y contadores</p>
+          </div>
+
+          <div class="border-t border-white border-opacity-20 pt-6 mb-6">
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-6xl font-bold text-white">$49.900</span>
+              <span class="text-blue-100">/mes</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-blue-100 line-through text-sm">$69.900</span>
+              <span class="bg-green-400 text-green-900 text-xs font-bold px-2 py-1 rounded-full">
+                Ahorrás $20.000
+              </span>
+            </div>
+          </div>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-white">
+              <svg class="w-4 h-4 text-yellow-300 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>50 análisis</strong> mensuales</span>
+            </li>
+            <li class="flex items-start gap-3 text-white">
+              <svg class="w-4 h-4 text-yellow-300 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Documentos hasta <strong>5MB</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-white">
+              <svg class="w-4 h-4 text-yellow-300 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>OCR avanzado</strong> de facturas</span>
+            </li>
+            <li class="flex items-start gap-3 text-white">
+              <svg class="w-4 h-4 text-yellow-300 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>Exportación a PDF</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-white">
+              <svg class="w-4 h-4 text-yellow-300 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Detección de <strong>anomalías</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-white">
+              <svg class="w-4 h-4 text-yellow-300 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>Soporte prioritario</strong> 24/7</span>
+            </li>
+          </ul>
+
+          <a
+            href="https://t.me/ClariTaxBot"
+            target="_blank"
+            class="block text-center bg-white hover:bg-blue-50 text-blue-600 font-bold px-6 py-4 rounded-xl transition-all mb-3"
+          >
+            🚀 Probar 7 días GRATIS
+          </a>
+          <a
+            href="https://t.me/Ginoogg"
+            target="_blank"
+            class="block text-center border-2 border-white border-opacity-50 hover:border-opacity-100 text-white font-semibold px-6 py-3 rounded-xl transition-all mb-3"
+          >
+            Contratar ahora
+          </a>
+          <p class="text-center text-sm text-blue-100">Sin tarjeta • Cancelás cuando quieras</p>
+        </article>
+
+        <!-- ENTERPRISE -->
+        <article class="bg-slate-800 border border-slate-700 rounded-2xl p-8">
+          <div class="mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl mb-4">
+              🏢
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">Plan Enterprise</h3>
+            <p class="text-slate-400 text-sm mt-1">Para estudios grandes</p>
+          </div>
+
+          <div class="border-t border-slate-700 pt-6 mb-6">
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-5xl font-bold text-white">$99.900</span>
+              <span class="text-slate-400">/mes</span>
+            </div>
+            <p class="text-sm text-slate-400">Plan anual con 20% OFF</p>
+          </div>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>Análisis ilimitados</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Documentos hasta <strong>15MB</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Todo Pro + <strong>API</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>Account manager</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>Capacitación</strong> y SLA 99.9%</span>
+            </li>
+          </ul>
+
+          <a
+            href="https://t.me/Ginoogg"
+            target="_blank"
+            class="block text-center bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all mb-3"
+          >
+            Agendar Demo
+          </a>
+          <p class="text-center text-xs text-slate-500">Planes a medida • Facturación ARS</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="py-8 px-6 bg-slate-800 bg-opacity-30">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div class="text-3xl mb-2">🔒</div>
+            <p class="text-sm text-slate-300">Encriptación<br/>end-to-end</p>
+          </div>
+          <div>
+            <div class="text-3xl mb-2">🇦🇷</div>
+            <p class="text-sm text-slate-300">Cumple normativa<br/>ARCA</p>
+          </div>
+          <div>
+            <div class="text-3xl mb-2">✅</div>
+            <p class="text-sm text-slate-300">Datos en<br/>Argentina</p>
+          </div>
+          <div>
+            <div class="text-3xl mb-2">📞</div>
+            <p class="text-sm text-slate-300">Soporte 24/7<br/>al instante</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARATIVA -->
+    <section id="comparativa" class="py-16 px-6 max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Comparativa completa</h2>
+        <p class="text-slate-400">Todas las características lado a lado</p>
+      </div>
+
+      <div class="bg-slate-800 bg-opacity-50 rounded-2xl border border-slate-700 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[640px]">
+            <thead>
+              <tr class="border-b border-slate-700">
+                <th class="text-left py-4 px-6 text-slate-400 font-semibold text-sm">Característica</th>
+                <th class="py-4 px-6 text-slate-300 font-semibold">Free</th>
+                <th class="py-4 px-6 text-slate-300 font-semibold bg-blue-500 bg-opacity-10">Profesional</th>
+                <th class="py-4 px-6 text-purple-400 font-semibold">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr class="border-b border-slate-700 border-opacity-50">
+                <td class="py-4 px-6 text-slate-300 font-medium">Análisis mensuales</td>
+                <td class="py-4 px-6 text-center text-slate-400">5</td>
+                <td class="py-4 px-6 text-center text-white bg-blue-500 bg-opacity-5">50</td>
+                <td class="py-4 px-6 text-center text-slate-300">Ilimitados</td>
+              </tr>
+              <tr class="border-b border-slate-700 border-opacity-50">
+                <td class="py-4 px-6 text-slate-300 font-medium">Tamaño máximo</td>
+                <td class="py-4 px-6 text-center text-slate-400">1 MB</td>
+                <td class="py-4 px-6 text-center text-white bg-blue-500 bg-opacity-5">5 MB</td>
+                <td class="py-4 px-6 text-center text-slate-300">15 MB</td>
+              </tr>
+              <tr class="border-b border-slate-700 border-opacity-50">
+                <td class="py-4 px-6 text-slate-300 font-medium">OCR & IA</td>
+                <td class="py-4 px-6 text-center text-slate-400">Básico</td>
+                <td class="py-4 px-6 text-center text-white bg-blue-500 bg-opacity-5">✓</td>
+                <td class="py-4 px-6 text-center text-slate-300">✓ + API</td>
+              </tr>
+              <tr class="border-b border-slate-700 border-opacity-50">
+                <td class="py-4 px-6 text-slate-300 font-medium">Exportación PDF</td>
+                <td class="py-4 px-6 text-center text-slate-400">—</td>
+                <td class="py-4 px-6 text-center text-white bg-blue-500 bg-opacity-5">✓</td>
+                <td class="py-4 px-6 text-center text-slate-300">✓</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-slate-300 font-medium">Soporte</td>
+                <td class="py-4 px-6 text-center text-slate-400">Email</td>
+                <td class="py-4 px-6 text-center text-white bg-blue-500 bg-opacity-5">Prioritario</td>
+                <td class="py-4 px-6 text-center text-slate-300">Account Mgr</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARANTÍA Y PAGOS -->
+    <section class="py-16 px-6 max-w-6xl mx-auto my-8">
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Garantía -->
+        <div class="bg-green-800 bg-opacity-10 border border-green-500 border-opacity-20 rounded-2xl p-1 text-center grid place-items-center p-4 md:p-0">
+          <div>
+            <div class="w-20 h-20 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg/30">
+              <span class="text-4xl">✓</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Garantía 30 días</h3>
+            <p class="text-slate-300">
+              Si no te convence, te devolvemos el 100% del dinero. Sin preguntas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Formas de pago -->
+        <div class="bg-slate-800 bg-opacity-50 border border-slate-700 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">Formas de pago</h3>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="text-xl">💳</span>
+              <div>
+                <p class="text-white font-semibold">Tarjetas</p>
+                <p class="text-sm text-slate-400">3 y 6 cuotas sin interés</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-xl">🏦</span>
+              <div>
+                <p class="text-white font-semibold">Transferencia</p>
+                <p class="text-sm text-slate-400">CBU/CVU directo</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-xl">🔷</span>
+              <div>
+                <p class="text-white font-semibold">MercadoPago</p>
+                <p class="text-sm text-slate-400">Pago rápido</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-slate-700">
+            <p class="text-sm text-slate-400">
+              💰 Facturación en <strong class="text-white">ARS</strong><br/>
+              📄 Factura A o B según corresponda
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 px-6 max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Preguntas frecuentes</h2>
+        <p class="text-slate-400">Resolvé tus dudas</p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="bg-slate-800 bg-opacity-50 border border-slate-700 rounded-xl p-6">
+          <summary class="cursor-pointer font-semibold text-white">
+            ¿Qué significa "análisis"?
+          </summary>
+          <div class="mt-4 text-slate-300">
+            Un "análisis" es el procesamiento de <strong>1 documento</strong> (PDF/Excel) para extracción automática de datos, categorización y reporte.
+          </div>
+        </details>
+
+        <details class="bg-slate-800 bg-opacity-50 border border-slate-700 rounded-xl p-6">
+          <summary class="cursor-pointer font-semibold text-white">
+            ¿Puedo cambiar de plan?
+          </summary>
+          <div class="mt-4 text-slate-300">
+            Sí, podés hacer upgrade o downgrade cuando quieras. Si subís, pagás la diferencia prorrateada.
+          </div>
+        </details>
+
+        <details class="bg-slate-800 bg-opacity-50 border border-slate-700 rounded-xl p-6">
+          <summary class="cursor-pointer font-semibold text-white">
+            ¿Cómo funciona la prueba gratis de 7 días?
+          </summary>
+          <div class="mt-4 text-slate-300">
+            <strong>No se requiere tarjeta.</strong> Activás el plan Pro por 7 días con todas las funciones. Al finalizar, decidís si continuar o volver al Free.
+          </div>
+        </details>
+
+        <details class="bg-slate-800 bg-opacity-50 border border-slate-700 rounded-xl p-6">
+          <summary class="cursor-pointer font-semibold text-white">
+            ¿Puedo pagar en cuotas?
+          </summary>
+          <div class="mt-4 text-slate-300">
+            Sí, aceptamos <strong>tarjetas con 3 y 6 cuotas sin interés</strong> a través de MercadoPago.
+          </div>
+        </details>
+
+        <details class="bg-slate-800 bg-opacity-50 border border-slate-700 rounded-xl p-6">
+          <summary class="cursor-pointer font-semibold text-white">
+            ¿Los datos están seguros?
+          </summary>
+          <div class="mt-4 text-slate-300">
+            Sí, usamos <strong>encriptación end-to-end</strong> y tus datos se alojan en Argentina. Cumplimos normativa ARCA.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-20 px-6">
+      <div class="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-12 text-center">
+
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+          ¿Listo para automatizar tu contabilidad?
+        </h2>
+
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          Unite a +200 contadores que ahorraron <strong>cientos de horas</strong> con AuditAi
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a
+            href="https://t.me/ClariTaxBot"
+            target="_blank"
+            class="bg-white hover:bg-blue-50 hover:scale-105 text-blue-600 font-bold px-8 py-4 rounded-xl transition-all w-full sm:w-auto text-center hover:shadow-lg/40"
+          >
+            🚀 Empezar Gratis Ahora
+          </a>
+
+          <a
+            href="https://t.me/Ginoogg"
+            target="_blank"
+            class="border-2 border-white text-white hover:scale-105 hover:shadow-lg/40 hover:bg-opacity-10 px-8 py-4 rounded-xl transition-all w-full sm:w-auto text-center"
+          >
+            💬 Hablar con ventas
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-blue-100 text-sm">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Sin tarjeta</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Garantía 30 días</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Cancelás cuando quieras</span>
+          </div>
+        </div>
+
+        <p class="mt-6 text-blue-200 text-xs">
+          Precios en ARS • IVA incluido según corresponda
+        </p>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  details summary {
+    list-style: none;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>

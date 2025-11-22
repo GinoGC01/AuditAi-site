@@ -1,53 +1,306 @@
 ---
-// import { ViewTransitions } from 'astro:transitions'
-
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import '../styles/global.css'
+
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
   fill1?: string;
   fill2?: string;
+  noIndex?: boolean;
 }
 
-const { title, fill1, fill2 } = Astro.props;
+const {
+  title,
+  description = 'AuditAi - Asistente Contador Digital con IA. Analizá facturas y resúmenes bancarios en 30 segundos. Diseñado para contadores argentinos.',
+  image = '/og-image.jpg',
+  fill1 = '#224466',
+  fill2 = '#224466',
+  noIndex = false
+} = Astro.props
 
+const siteUrl = Astro.site ?? new URL('https://auditai.com.ar')
+const canonicalURL = new URL(Astro.url.pathname, siteUrl)
+const imageURL = image.startsWith('http') ? image : new URL(image, siteUrl).toString()
+const siteName = 'AuditAi';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
   <head>
+    <!-- Core Meta -->
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta -->
+    <title>{title} | {siteName}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="AuditAi" />
+    <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Keywords para Argentina -->
+    <meta name="keywords" content="contador argentina, factura electronica, ARCA, AFIP, analisis financiero, bot telegram contabilidad, automatizacion contable, monotributo, retenciones, percepciones, CAE, CUIT" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | ${siteName}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={`${title} | ${siteName}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
 
-    <title>{title}</title>
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'AuditAi',
+      description,
+      url: canonicalURL,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Telegram',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'ARS'
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '50'
+      },
+      author: {
+        '@type': 'Organization',
+        name: 'AuditAi',
+        url: siteUrl.toString()
+      }
+    })} />
   </head>
-  <body class="bg-neutral-950 overflow-x-hidden">
 
-    <div class="absolute top-0 left-0 h-screen w-screen -z-10">
-      <svg version="1.1" viewBox="0 0 800 450">
+  <body class="bg-neutral-950 text-white overflow-x-hidden antialiased selection:bg-blue-500/30 selection:text-white">
+
+    <!-- Skip to main content (Accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-500 text-white px-4 py-2 rounded-lg z-[100]">
+      Saltar al contenido principal
+    </a>
+
+    <!-- Background Effects -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+      <!-- Gradient Blobs -->
+      <svg
+        class="absolute w-full h-full opacity-60"
+        viewBox="0 0 800 450"
+        preserveAspectRatio="xMidYMid slice"
+      >
         <defs>
-          <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feGaussianBlur stdDeviation="40" in="SourceGraphic" result="blur"></feGaussianBlur>
+          <filter id="blur-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic" result="blur" />
           </filter>
+          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={`stop-color:${fill1}`} />
+            <stop offset="100%" style="stop-color:#0d9488" />
+          </linearGradient>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={`stop-color:${fill2}`} />
+            <stop offset="100%" style="stop-color:#3b82f6" />
+          </linearGradient>
         </defs>
-        <g filter="url(#bbblurry-filter)">
-          <ellipse rx="150" ry="150" cx="828" cy="177" fill={fill1}></ellipse>
-          <ellipse rx="150" ry="150" cx="-25" cy="33" fill={fill2}></ellipse>
+        <g filter="url(#blur-filter)">
+          <ellipse
+            class="animate-blob-1"
+            rx="180" ry="180"
+            cx="750" cy="120"
+            fill="url(#gradient1)"
+          />
+          <ellipse
+            class="animate-blob-2"
+            rx="160" ry="160"
+            cx="50" cy="80"
+            fill="url(#gradient2)"
+          />
+          <ellipse
+            class="animate-blob-3"
+            rx="120" ry="120"
+            cx="400" cy="350"
+            fill={fill1}
+            opacity="0.4"
+          />
         </g>
       </svg>
+
+      <!-- Noise texture overlay -->
+      <div class="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
+
+      <!-- Subtle grid -->
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
     </div>
-    <Header/>
-    <slot />
-    <Footer/>
+
+    <!-- Page Content -->
+    <Header />
+
+    <main id="main-content" class="relative z-10">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Back to top button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 w-12 h-12 bg-blue-500/80 hover:bg-blue-500 backdrop-blur-sm rounded-full flex items-center justify-center text-white shadow-lg shadow-blue-500/25 opacity-0 invisible transition-all duration-300 z-50 hover:scale-110"
+      aria-label="Volver arriba"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+      </svg>
+    </button>
+
   </body>
 </html>
 
-<style>
+<style is:global>
+  /* View Transitions */
   @view-transition {
-  navigation: auto;
-}
+    navigation: auto;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #171717;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #525252;
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #404040 #171717;
+  }
+
+  /* Blob animations */
+  @keyframes blob-float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-30px, 20px) scale(1.05); }
+    50% { transform: translate(-20px, -20px) scale(0.95); }
+    75% { transform: translate(20px, 10px) scale(1.02); }
+  }
+
+  @keyframes blob-float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(20px, -30px) scale(0.95); }
+    50% { transform: translate(30px, 20px) scale(1.05); }
+    75% { transform: translate(-10px, -10px) scale(0.98); }
+  }
+
+  @keyframes blob-float-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, -20px) scale(1.1); }
+    66% { transform: translate(30px, 30px) scale(0.9); }
+  }
+
+  .animate-blob-1 {
+    animation: blob-float-1 20s ease-in-out infinite;
+  }
+
+  .animate-blob-2 {
+    animation: blob-float-2 25s ease-in-out infinite;
+  }
+
+  .animate-blob-3 {
+    animation: blob-float-3 30s ease-in-out infinite;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .animate-blob-1,
+    .animate-blob-2,
+    .animate-blob-3 {
+      animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 </style>
+
+<script>
+// Back to top button
+const backToTop = document.getElementById('back-to-top')
+
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.remove('opacity-0', 'invisible')
+      backToTop.classList.add('opacity-100', 'visible')
+    } else {
+      backToTop.classList.add('opacity-0', 'invisible')
+      backToTop.classList.remove('opacity-100', 'visible')
+    }
+  }, { passive: true })
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
+}
+
+// Prevent FOUC (Flash of Unstyled Content)
+document.documentElement.classList.add('js-loaded')
+</script>

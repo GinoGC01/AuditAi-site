@@ -11,119 +11,373 @@ import CarruselComoFunciona from '../components/index/CarruselComoFunciona.astro
 import { Image } from 'astro:assets'
 ---
 
-<Layout title="AuditAi" fill1="#224466" fill2="#224466">
+<Layout title="AuditAi - Asistente Contador con IA para Argentina" fill1="#224466" fill2="#224466">
 
-  <main class="z-50 bg-transparent md:p-6 md:px-40">
-    <!-- HEADER -->
+  <main class="z-50 bg-transparent">
 
-    <!-- HERO -->
-    <section class="mt-12 w-auto justify-center items-center flex flex-col ">
-      <div class="bg-zinc-900 w-xs md:w-[24rem] rounded-2xl py-1 px-4 md:px-0 flex items-center animate-fade-down animate-once animate-duration-700">
-        <span class="text-white w-14 bg-gradient-to-r from-blue-600 to-teal-400 px-2 rounded-2xl py-1 font-semibold">NEW</span>
-        <span class="text-slate-300 font-semibold text-sm px-4 md:text-[0.8rem]">Audita tus finanzas con IA 🚀</span>
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex flex-col justify-center items-center px-4 md:px-6 lg:px-40 pt-8 pb-16">
+
+      <!-- Badge -->
+      <div class="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-full py-2 px-4 flex items-center gap-3 animate-fade-down animate-once animate-duration-700">
+        <span class="text-white text-xs bg-gradient-to-r from-blue-600 to-teal-400 px-3 py-1 rounded-full font-bold uppercase tracking-wide">Nuevo</span>
+        <span class="text-slate-300 font-medium text-sm">Audita tus finanzas con IA 🚀</span>
       </div>
 
-      <h1 class="text-3xl text-white w-full md:w-[43rem] text-center font-bold mt-10 px-4 md:px-0 md:text-5xl" >
-       Asistente Contador Digital en Telegram Analiza Facturas y Resúmenes Bancarios al Instante <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">AuditAi</span>
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl text-white text-center font-bold mt-8 max-w-4xl leading-tight">
+        Analizá Facturas y Resúmenes Bancarios en
+        <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">30 Segundos</span>
       </h1>
-      <h2 class="text-slate-300 mt-10 text-center text-xl px-4 md:px-0 md:text-2xl">
-        Subí un PDF y recibí <span class="underline decoration-solid ">en 30 segundos</span>: <b class="block">ingresos, egresos, impuestos y alertas de inconsistencias.</b>
-      </h2>
-      <strong class="text-slate-500 mt-5"> Sin instalar nada.</strong>
 
-      <div class="flex gap-2 items-center mt-6 flex-col md:flex-row md:gap-10">
-        <div class="flex flex-col gap-2 w-full md:w-auto items-center">
-          <a href="https://t.me/ClariTaxBot" target="_blank" class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-4 py-2 rounded-xl mt-10 flex items-center gap-2 pointer w-full md:w-auto justify-center">
-            Probar Gratis en Telegram
-          </a>
-          <span class="text-slate-500 mt-1 md:none">Sin tarjeta • 3 análisis gratis</span>
-        </div>
+      <!-- Subheadline -->
+      <p class="text-slate-400 mt-6 text-center text-lg md:text-xl max-w-2xl leading-relaxed">
+        El asistente de IA en Telegram que extrae <span class="text-white font-semibold">ingresos, egresos, impuestos</span> y detecta inconsistencias automáticamente.
+      </p>
 
-        <div class="flex flex-col gap-2 w-full md:w-auto items-center">
-          <a href="/demo" class="bg-transparent hover:bg-blue-500 text-xl font-semibold text-white px-4 py-2 rounded-xl mt-10 flex items-center gap-2 pointer w-full md:w-auto justify-center border-solid border-2 border-blue-400">Ver cómo funciona</a>
-          <span class="text-slate-500 mt-1 md:none">Ver análisis de ejemplo (200 páginas)!</span>
-        </div>
-
-      </div>
-
-          <!-- SECCION DE INFORMACIÓN PRIMARIA -->
-    <section class="flex flex-col gap-4 items-center justify-center mt-15 px-2 md:px-0">
-      <h3 class="text-slate-300 text-xl text-center md:text-4xl">🇦🇷 Diseñado para Contadores <b>Argentinos</b></h3>
-      <ul class="text-slate-300 font-bold md:flex md:gap-8 md:text-center md:py-8 md:border-y md:border-slate-700 md:my-4">
-        <li class="flex items-center gap-2"> <span class="text-2xl text-green-400">✓</span> Cumple normativa ARCA</li>
-        <li class="flex items-center gap-2"><span class="text-2xl text-green-400">✓</span> Detecta retenciones y percepciones</li>
-        <li class="flex items-center gap-2"><span class="text-2xl text-green-400">✓</span> Identifica tipos de factura (A, B, C, E, M)</li>
-        <li class="flex items-center gap-2"><span class="text-2xl text-green-400">✓</span> Validación de CAE y CUIT</li>
-      </ul>
-      <ul class="flex flex-col gap-8 mt-6 text-slate-300">
-        {[
-          { quote: 'AuditAi me ahorra 10 horas semanales en análisis manual de resúmenes bancarios', person: 'María González, Contadora Pública (CPCECABA)' },
-          { quote: 'Lo uso para todos mis clientes monotributistas. La detección de gastos deducibles es impecable', person: 'Carlos Rodríguez, Estudio Contable Rodríguez & Asoc.' }].map(({ quote, person }) => (
-          <li class="flex flex-col gap-2 border-l-4 border-blue-400 pl-4">
-            <header>
-              <h4 class="font-bold">"{quote}"</h4>
-            </header>
-            <footer class="text-xs text-slate-500">
-            — {person}
-            </footer>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-      <div class="flex gap-4 w-full mt-20 px-4 md:px-0 xl:px-36 grid grid-cols-1 md:grid-cols-4">
-        {[heroImage1, heroImage2, heroImage3, heroImage4].map((img, i) => (
-          <CardFunction img={img} i={i} />
-        ))}
-      </div>
-    </section>
-
-    <!-- SECCION DE INFORMACIÓN SECUNDARIA -->
-    <section class="w-auto justify-center items-center flex flex-col md:flex-row mt-10 md:mt-36 px-4 md:px-0">
-      <Image src={info1Image} alt='Imagen ilustrativa de AuditAi bot' class="h-auto md:w-96 w-full rounded-xl mb-4 md:mb-0" />
-      <div class="w-full md:w-[28rem] mx-auto md:mx-0 md:ml-20 text-center md:text-left">
-        <span class="text-white text-2xl md:text-3xl font-semibold">
-          Ahorrá horas de trabajo manual y ganá eficiencia con <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">automatización inteligente</span>
+      <!-- Trust indicators -->
+      <div class="flex flex-wrap justify-center gap-6 mt-8 text-sm text-slate-500">
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Sin instalación
         </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Sin tarjeta de crédito
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          3 análisis gratis
+        </span>
+      </div>
 
-        <p class="text-slate-300 text-[0.7rem] mt-4">
-          AuditAi lee automáticamente PDFs y archivos Excel, calcula ganancias, gastos e impuestos, y detecta anomalías. Ahorra tiempo y minimiza errores en tu contabilidad.
-        </p>
-        <a href="https://www.t.me/ClariTaxBot" target="_blank" class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-16 py-2 rounded-lg mt-10 w-full md:w-auto justify-center flex items-center gap-2 pointer">
-          Probar AuditAi
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto">
+        <a href="https://t.me/ClariTaxBot" target="_blank"
+           class="group bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white text-lg font-semibold px-8 py-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Probar Gratis en Telegram
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
+        <a href="/demo"
+           class="bg-transparent border-2 border-slate-600 hover:border-slate-500 text-white text-lg font-semibold px-8 py-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 hover:bg-slate-800/50">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Ver Demo (200 páginas)
+        </a>
+      </div>
+
+      <!-- Social Proof Counter -->
+      <div class="mt-16 flex flex-col items-center">
+        <div class="flex -space-x-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-zinc-900 flex items-center justify-center text-white text-xs font-bold">MG</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 border-2 border-zinc-900 flex items-center justify-center text-white text-xs font-bold">CR</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-zinc-900 flex items-center justify-center text-white text-xs font-bold">LP</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-zinc-900 flex items-center justify-center text-white text-xs font-bold">+50</div>
+        </div>
+        <p class="text-slate-500 text-sm mt-3">+50 contadores argentinos ya lo usan</p>
+      </div>
+    </section>
+
+    <!-- ARGENTINA COMPLIANCE SECTION -->
+    <section class="py-20 px-4 md:px-6 lg:px-40 bg-gradient-to-b from-transparent to-zinc-900/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-4xl mb-4 block">🇦🇷</span>
+          <h2 class="text-3xl md:text-4xl text-white font-bold">
+            Diseñado para la <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">Contabilidad Argentina</span>
+          </h2>
+          <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+            Cumplimos con todas las normativas fiscales argentinas y entendemos las particularidades de tu trabajo diario.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { icon: '📋', title: 'Normativa ARCA', desc: 'Cumplimiento total con regulaciones vigentes' },
+            { icon: '💰', title: 'Retenciones', desc: 'Detecta retenciones y percepciones automáticamente' },
+            { icon: '📄', title: 'Tipos de Factura', desc: 'Identifica facturas A, B, C, E y M' },
+            { icon: '✓', title: 'Validación CAE/CUIT', desc: 'Verificación automática de comprobantes' }
+          ].map(item => (
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
+              <span class="text-3xl mb-4 block">{item.icon}</span>
+              <h3 class="text-white font-semibold text-lg mb-2">{item.title}</h3>
+              <p class="text-slate-400 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES CARDS -->
+    <section class="py-20 px-4 md:px-6 lg:px-40">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl text-white font-bold text-center mb-4">
+          Todo lo que necesitás en <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">un solo lugar</span>
+        </h2>
+        <p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
+          Desde la extracción de datos hasta el reporte final, automatizamos cada paso.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[heroImage1, heroImage2, heroImage3, heroImage4].map((img, i) => (
+            <CardFunction img={img} i={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFIT SECTION 1 -->
+    <section class="py-20 px-4 md:px-6 lg:px-40">
+      <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2">
+          <Image src={info1Image} alt='AuditAi bot interface' class="rounded-2xl shadow-2xl shadow-blue-500/10" />
+        </div>
+        <div class="lg:w-1/2">
+          <span class="text-blue-400 font-semibold text-sm uppercase tracking-wide">Ahorro de tiempo</span>
+          <h2 class="text-3xl md:text-4xl text-white font-bold mt-3 leading-tight">
+            Ahorrá <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">10+ horas semanales</span> de trabajo manual
+          </h2>
+          <p class="text-slate-400 mt-6 leading-relaxed">
+            AuditAi lee automáticamente PDFs y archivos Excel, calcula ganancias, gastos e impuestos, y detecta anomalías. Minimizá errores y enfocate en lo que realmente importa.
+          </p>
+          <ul class="mt-6 space-y-3">
+            {['Lectura automática de PDFs y Excel', 'Cálculo instantáneo de impuestos', 'Detección de anomalías con IA'].map(item => (
+              <li class="flex items-center gap-3 text-slate-300">
+                <svg class="w-5 h-5 text-teal-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="https://t.me/ClariTaxBot" target="_blank"
+             class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-xl mt-8 transition-all duration-300">
+            Empezar ahora
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- CÓMO FUNCIONA -->
-    <section class="mt-10 md:mt-24 w-auto justify-center items-center flex flex-col px-4 md:px-0">
-      <h3 class="text-4xl text-white w-full md:w-[43rem] text-center font-semibold mt-10 mb-10 px-4 md:px-0">
-        <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">Cómo</span> funciona
-      </h3>
-        <CarruselComoFunciona />
-    </section>
+   <!-- CÓMO FUNCIONA - Sección completa para index.astro -->
+<section class="py-24 px-4 md:px-6 lg:px-40 relative overflow-hidden">
 
-    <section class="w-auto justify-center items-center flex flex-col md:flex-row mt-10 md:mt-36 px-4 md:px-0">
-      <div class="w-full md:w-[28rem] mx-auto mb-[50px] md:mb-[0] md:mx-0 md:mr-20 text-center md:text-left mb-4 md:mb-0">
-        <span class="text-white text-3xl font-semibold text-center">
-          Generación de <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">reportes instantáneos</span>
-        </span>
-        <p class="text-slate-300 text-[0.7rem] mt-4">
-          Sube los resúmenes financieros y AuditAi genera reportes claros y estructurados en segundos. Identifica impuestos, ganancias y gastos sin complicaciones.
-        </p>
-        <a href="https://www.t.me/ClariTaxBot" target="_blank" class="bg-blue-400 hover:bg-blue-500 text-xl font-semibold text-white px-16 py-2 rounded-lg mt-10 w-full md:w-auto justify-center flex items-center gap-2 pointer">
-          Generar reporte
-        </a>
+  <!-- Background decoration -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-600/5 via-teal-500/5 to-green-500/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 rounded-full px-4 py-2 mb-6">
+        <span class="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></span>
+        <span class="text-slate-400 text-sm font-medium">Simple y rápido</span>
       </div>
-      <Image src={info2Image} alt="Chat de telegram con AuditAi que muestra un analisi de documento" class="h-auto md:w-96 w-full rounded-xl" />
+
+      <h2 class="text-4xl md:text-5xl text-white font-bold mb-6">
+        <span class="bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 text-transparent bg-clip-text">Cómo</span> funciona
+      </h2>
+
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+        De documento a reporte profesional en <span class="text-white font-semibold">3 simples pasos</span>.
+        Sin configuración, sin curva de aprendizaje.
+      </p>
+    </div>
+
+    <!-- Steps Component -->
+    <CarruselComoFunciona />
+
+  </div>
+</section>
+
+    <!-- BENEFIT SECTION 2 -->
+    <section class="py-20 px-4 md:px-6 lg:px-40">
+      <div class="max-w-6xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-12">
+        <div class="lg:w-1/2">
+          <Image src={info2Image} alt="AuditAi análisis de documento" class="rounded-2xl shadow-2xl shadow-teal-500/10" />
+        </div>
+        <div class="lg:w-1/2">
+          <span class="text-teal-400 font-semibold text-sm uppercase tracking-wide">Reportes profesionales</span>
+          <h2 class="text-3xl md:text-4xl text-white font-bold mt-3 leading-tight">
+            Reportes <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">instantáneos</span> listos para presentar
+          </h2>
+          <p class="text-slate-400 mt-6 leading-relaxed">
+            Subí los resúmenes financieros y AuditAi genera reportes claros y estructurados en segundos. Identificá impuestos, ganancias y gastos sin complicaciones.
+          </p>
+          <a href="https://t.me/ClariTaxBot" target="_blank"
+             class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-6 py-3 rounded-xl mt-8 transition-all duration-300">
+            Generar mi primer reporte
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- CONFIANZA -->
-    <section class="w-auto justify-center items-center flex flex-col mt-20 px-4 md:px-0">
-      <h3 class="text-3xl md:text-4xl text-white w-full md:w-[43rem] text-center font-semibold mt-10 mb-10 ">
-        <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text ">Transforma <span class="text-white">el esfuerzo manual en</span> resultados Automaticos</span>
-      </h3>
+    <!-- TESTIMONIALS -->
+    <section class="py-20 px-4 md:px-6 lg:px-40 bg-gradient-to-b from-transparent to-zinc-900/50">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl text-white font-bold text-center mb-4">
+          Lo que dicen nuestros <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">usuarios</span>
+        </h2>
+        <p class="text-slate-400 text-center mb-12">Contadores que ya transformaron su forma de trabajar</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            { quote: 'AuditAi me ahorra 10 horas semanales en análisis manual de resúmenes bancarios. Es increíble la precisión.', person: 'María González', role: 'Contadora Pública (CPCECABA)', rating: 5 },
+            { quote: 'Lo uso para todos mis clientes monotributistas. La detección de gastos deducibles es impecable.', person: 'Carlos Rodríguez', role: 'Estudio Contable Rodríguez & Asoc.', rating: 5 }
+          ].map(({ quote, person, role, rating }) => (
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300">
+              <div class="flex gap-1 mb-4">
+                {[...Array(rating)].map(() => (
+                  <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                ))}
+              </div>
+              <p class="text-slate-300 text-lg leading-relaxed mb-6">"{quote}"</p>
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white font-bold">
+                  {person.split(' ').map(n => n[0]).join('')}
+                </div>
+                <div>
+                  <p class="text-white font-semibold">{person}</p>
+                  <p class="text-slate-500 text-sm">{role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
 
+    <!-- PRICING -->
+    <section class="py-20 px-4 md:px-6 lg:px-40">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl text-white font-bold text-center mb-4">
+          Planes simples y <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">transparentes</span>
+        </h2>
+        <p class="text-slate-400 text-center mb-12">Empezá gratis, escalá cuando lo necesites</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Free -->
+          <div class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <h3 class="text-white font-bold text-xl mb-2">Gratis</h3>
+            <p class="text-slate-500 text-sm mb-6">Para probar el servicio</p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-white">$0</span>
+              <span class="text-slate-500">/mes</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              {['3 análisis por mes', 'PDFs hasta 10 páginas', 'Soporte por Telegram'].map(item => (
+                <li class="flex items-center gap-3 text-slate-400 text-sm">
+                  <svg class="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="https://t.me/ClariTaxBot" class="block text-center bg-zinc-800 hover:bg-zinc-700 text-white font-semibold py-3 rounded-xl transition-all duration-300">
+              Empezar gratis
+            </a>
+          </div>
+
+          <!-- Pro -->
+          <div class="bg-gradient-to-b from-blue-900/30 to-zinc-900/50 border-2 border-blue-500 rounded-2xl p-8 relative transform md:scale-105">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-white text-xs font-bold px-4 py-1 rounded-full uppercase">Más popular</span>
+            </div>
+            <h3 class="text-white font-bold text-xl mb-2">Profesional</h3>
+            <p class="text-slate-500 text-sm mb-6">Para contadores independientes</p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-white">$4.990</span>
+              <span class="text-slate-500">/mes</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              {['50 análisis por mes', 'PDFs hasta 200 páginas', 'Exportar a Excel', 'Soporte prioritario', 'Detección de anomalías'].map(item => (
+                <li class="flex items-center gap-3 text-slate-300 text-sm">
+                  <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="https://t.me/ClariTaxBot" class="block text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold py-3 rounded-xl transition-all duration-300">
+              Elegir plan
+            </a>
+          </div>
+
+          <!-- Estudio -->
+          <div class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <h3 class="text-white font-bold text-xl mb-2">Estudio</h3>
+            <p class="text-slate-500 text-sm mb-6">Para estudios contables</p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-white">$14.990</span>
+              <span class="text-slate-500">/mes</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              {['Análisis ilimitados', 'Sin límite de páginas', 'Multi-usuario (5)', 'API access', 'Soporte dedicado'].map(item => (
+                <li class="flex items-center gap-3 text-slate-400 text-sm">
+                  <svg class="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="https://t.me/ClariTaxBot" class="block text-center bg-zinc-800 hover:bg-zinc-700 text-white font-semibold py-3 rounded-xl transition-all duration-300">
+              Contactar ventas
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-4 md:px-6 lg:px-40 bg-gradient-to-b from-transparent to-zinc-900/50">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl text-white font-bold text-center mb-4">
+          Preguntas <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">frecuentes</span>
+        </h2>
+        <p class="text-slate-400 text-center mb-12">Todo lo que necesitás saber sobre AuditAi</p>
+
+        <div class="space-y-4" x-data="{ open: null }">
+          {[
+            { q: '¿Qué tipo de documentos puedo analizar?', a: 'AuditAi puede analizar PDFs de facturas electrónicas (A, B, C, E, M), resúmenes bancarios de los principales bancos argentinos, y archivos Excel con movimientos contables.' },
+            { q: '¿Es seguro subir mis documentos?', a: 'Absolutamente. Utilizamos encriptación de extremo a extremo y no almacenamos tus documentos después del análisis. Cumplimos con todas las normativas de protección de datos.' },
+            { q: '¿Cuánto tiempo tarda el análisis?', a: 'Un documento típico de hasta 50 páginas se analiza en menos de 30 segundos. Documentos más extensos pueden tomar hasta 2 minutos.' },
+            { q: '¿Puedo usar AuditAi para mis clientes?', a: 'Sí, el plan Profesional y Estudio están diseñados para contadores que trabajan con múltiples clientes. Podés generar reportes individuales para cada uno.' },
+            { q: '¿Qué pasa si encuentro un error en el análisis?', a: 'Nuestro equipo de soporte está disponible para revisar cualquier inconsistencia. Además, la IA mejora constantemente con el feedback de los usuarios.' },
+            { q: '¿Cómo cancelo mi suscripción?', a: 'Podés cancelar en cualquier momento directamente desde Telegram escribiendo /cancelar. No hay contratos ni penalidades.' }
+          ].map(({ q, a }, i) => (
+            <details class="group bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <span class="text-white font-medium pr-4">{q}</span>
+                <svg class="w-5 h-5 text-slate-400 transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="text-slate-400">{a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-24 px-4 md:px-6 lg:px-40">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl text-white font-bold mb-6">
+          Transformá tu forma de <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">trabajar hoy</span>
+        </h2>
+        <p class="text-slate-400 text-xl mb-10 max-w-2xl mx-auto">
+          Únite a los +50 contadores argentinos que ya están ahorrando horas de trabajo manual cada semana.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://t.me/ClariTaxBot" target="_blank"
+             class="group bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 text-white text-xl font-bold px-10 py-5 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Comenzar Gratis Ahora
+            <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+        <p class="text-slate-600 text-sm mt-6">Sin tarjeta de crédito • 3 análisis gratis • Cancelá cuando quieras</p>
+      </div>
+    </section>
   </main>
 </Layout>

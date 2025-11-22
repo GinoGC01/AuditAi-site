@@ -3,55 +3,209 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Demo | AuditAi" fill1="#4e197a" fill2="#4e197a">
-    <main class="z-50 bg-transparent md:p-6 md:px-40">
-        <section class="mt-20 w-full flex flex-col items-center text-center px-6 md:px-0">
-            <h1 class="text-3xl md:text-5xl font-bold text-white">
-            Descubre cómo funciona <span class="bg-gradient-to-r from-blue-600 to-teal-400 text-transparent bg-clip-text">AuditAi</span>
+    <main class="z-50 bg-transparent md:p-6 md:px-40 relative">
+        <!-- Decorative background elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <section class="relative mt-20 w-full flex flex-col items-center text-center px-6 md:px-0">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-teal-400/20
+                        border border-blue-500/30 rounded-full backdrop-blur-sm mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                </span>
+                <span class="text-sm font-medium text-slate-200">Demo en vivo</span>
+            </div>
+
+            <!-- Heading with improved hierarchy -->
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                Descubre cómo funciona <br class="hidden md:block"/>
+                <span class="relative inline-block">
+                    <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-teal-400 text-transparent bg-clip-text">
+                        AuditAi
+                    </span>
+                    <svg class="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
+                        <path d="M0 4C50 2 100 6 200 4" stroke="url(#gradient)" stroke-width="3" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(37, 99, 235);stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:rgb(45, 212, 191);stop-opacity:0.6" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
             </h1>
 
-            <p class="text-slate-300 mt-6 max-w-2xl">
-            Mira esta demo en video y comprobá cómo AuditAi transforma resúmenes bancarios y planillas en reportes listos para presentar.
-            La manera más simple y rápida de optimizar la contabilidad de tu estudio o empresa.
+            <p class="text-slate-300 text-lg mt-8 max-w-2xl leading-relaxed">
+                Mira esta demo en video y comprobá cómo AuditAi transforma resúmenes bancarios y planillas
+                en reportes listos para presentar. <span class="text-teal-400 font-semibold">La manera más simple y rápida</span>
+                de optimizar la contabilidad de tu estudio o empresa.
             </p>
 
-            <!-- Video -->
-            <div class="mt-10 w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-700">
-                <iframe
-                    class="w-full h-full"
-                    src="https://www.youtube.com/embed/3H0SLWK4J9M?si=nKFTSaxsab1vv80g"
-                    title="Demo AuditAi"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                ></iframe>
-            </div>
-            <div class="mt-6 text-slate-300 max-w-2xl text-left flex gap-2 md:flex-row flex-col items-center">
-                <h3>Archivo utilizado para la DEMO: </h3>
-                <a href="/demo/Resumen-BSE-2023.pdf" download class=" block text-blue-500 md:hover:underline"> Resumen-BSE-2023.pdf</a>
-            </div>
-            <span class="text-s text-gray-500 w-full text-center md:max-w-2xl ">Contiene mas de 200 páginas! </span>
-
-            <!-- Features -->
-
-            <div class="mt-14 grid md:grid-cols-3 gap-8 text-left text-slate-300 max-w-5xl">
-            <div class="bg-zinc-900/50 p-6 rounded-2xl shadow-md border border-slate-700 hover:border-teal-400 transition">
-                <h3 class="text-xl font-semibold text-white mb-3">⏱ Ahorro de tiempo</h3>
-                <p>Olvidate de cargar datos manualmente. AuditAi procesa resúmenes y planillas en segundos, liberando horas para tareas estratégicas.</p>
-            </div>
-            <div class="bg-zinc-900/50 p-6 rounded-2xl shadow-md border border-slate-700 hover:border-teal-400 transition">
-                <h3 class="text-xl font-semibold text-white mb-3">📊 Reportes listos</h3>
-                <p>Obtén informes claros, con gráficos y hallazgos automáticos, listos para presentar a clientes o usar en decisiones internas.</p>
-            </div>
-            <div class="bg-zinc-900/50 p-6 rounded-2xl shadow-md border border-slate-700 hover:border-teal-400 transition">
-                <h3 class="text-xl font-semibold text-white mb-3">⚡ Detección de errores</h3>
-                <p>AuditAi señala inconsistencias y movimientos sospechosos que podrían pasar desapercibidos en una revisión manual.</p>
-            </div>
+            <!-- Video with enhanced styling -->
+            <div class="mt-12 w-full max-w-5xl relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-400
+                            rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl
+                            border-2 border-slate-700/50 group-hover:border-slate-600/50 transition duration-300">
+                    <iframe
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/3H0SLWK4J9M?si=nKFTSaxsab1vv80g"
+                        title="Demo AuditAi"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
             </div>
 
-            <div class="mt-16">
-            <a href="/contacto" class="bg-gradient-to-r from-blue-600 to-teal-400 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:opacity-90 transition">
-                Probar AuditAi en tu estudio →
-            </a>
+            <!-- Download section with better CTA -->
+            <div class="mt-8 max-w-2xl w-full">
+                <div class="bg-zinc-900/60 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6
+                            hover:border-blue-500/50 transition duration-300">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-400
+                                        rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-white font-semibold text-sm md:text-base">Archivo de demo</h3>
+                                <p class="text-slate-400 text-xs md:text-sm">Resumen-BSE-2023.pdf • +200 páginas</p>
+                            </div>
+                        </div>
+                        <a href="/demo/Resumen-BSE-2023.pdf"
+                           download
+                           class="flex-shrink-0 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600
+                                  text-white text-sm font-semibold rounded-lg
+                                  hover:shadow-lg hover:shadow-blue-500/50 hover:-translate-y-0.5
+                                  active:translate-y-0 transition-all duration-200
+                                  flex items-center gap-2 group/btn">
+                            <svg class="w-4 h-4 transition-transform group-hover/btn:translate-y-0.5"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            Descargar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features with improved cards -->
+            <div class="mt-20 w-full max-w-6xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                    ¿Por qué elegir <span class="text-teal-400">AuditAi</span>?
+                </h2>
+                <p class="text-slate-400 mb-10 max-w-2xl mx-auto">
+                    Descubrí las ventajas que hacen de AuditAi la herramienta preferida por contadores y estudios
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <!-- Card 1 -->
+                    <div class="group relative bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl
+                                border border-slate-700/50 hover:border-blue-500/50
+                                transition-all duration-300 hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent
+                                    rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl
+                                        flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-2xl">⏱</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                                Ahorro de tiempo
+                            </h3>
+                            <p class="text-slate-300 leading-relaxed">
+                                Olvidate de cargar datos manualmente. AuditAi procesa resúmenes y planillas en segundos,
+                                <span class="text-teal-400 font-medium">liberando horas</span> para tareas estratégicas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group relative bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl
+                                border border-slate-700/50 hover:border-teal-500/50
+                                transition-all duration-300 hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-br from-teal-600/5 to-transparent
+                                    rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-emerald-600 rounded-xl
+                                        flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-2xl">📊</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">
+                                Reportes listos
+                            </h3>
+                            <p class="text-slate-300 leading-relaxed">
+                                Obtén informes claros, con gráficos y hallazgos automáticos,
+                                <span class="text-teal-400 font-medium">listos para presentar</span> a clientes o usar en decisiones internas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group relative bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl
+                                border border-slate-700/50 hover:border-indigo-500/50
+                                transition-all duration-300 hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/5 to-transparent
+                                    rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl
+                                        flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-2xl">⚡</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                                Detección de errores
+                            </h3>
+                            <p class="text-slate-300 leading-relaxed">
+                                AuditAi señala <span class="text-teal-400 font-medium">inconsistencias y movimientos sospechosos</span>
+                                que podrían pasar desapercibidos en una revisión manual.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced CTA Section -->
+            <div class="mt-20 mb-16 w-full max-w-4xl">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-400
+                                rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-br from-zinc-900 to-zinc-900/80 backdrop-blur-sm
+                                border border-slate-700/50 rounded-2xl p-10 md:p-12 text-center">
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                            ¿Listo para transformar tu contabilidad?
+                        </h2>
+                        <p class="text-slate-300 mb-8 max-w-xl mx-auto">
+                            Únete a los estudios que ya están ahorrando tiempo y mejorando la precisión de sus análisis
+                        </p>
+                        <a href="/contacto"
+                           class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-400
+                                  text-white px-8 py-4 rounded-xl font-bold text-lg
+                                  shadow-xl shadow-blue-500/25
+                                  hover:shadow-2xl hover:shadow-blue-500/40
+                                  hover:scale-105 active:scale-100
+                                  transition-all duration-300 group/cta">
+                            Probar AuditAi en tu estudio
+                            <svg class="w-5 h-5 transition-transform group-hover/cta:translate-x-1"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <p class="text-slate-400 text-sm mt-4">
+                            Sin tarjeta de crédito • Setup en minutos
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

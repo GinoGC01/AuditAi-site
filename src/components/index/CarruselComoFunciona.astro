@@ -1,29 +1,198 @@
 ---
+type ColorKey = 'blue' | 'teal' | 'green';
 
-const steps = [
+interface Step {
+  title: string;
+  description: string;
+  icon: 'upload' | 'brain' | 'check';
+  time: string;
+  formats?: string[];
+  detects?: string[];
+  outputs?: string[];
+  color: ColorKey;
+}
+
+const steps: Step[] = [
   {
-    title: 'Sube tu PDF/Excel',
-    description: 'Subí el archivo PDF o Excel y dejá que AuditAi se encargue del resto en segundos.'
+    title: 'Subí tu PDF/Excel',
+    description: 'Enviá el archivo por Telegram y dejá que AuditAi se encargue del resto en segundos.',
+    icon: 'upload',
+    time: '5 seg',
+    formats: ['PDF', 'Excel', 'CSV'],
+    color: 'blue'
   },
   {
-    title: 'La IA analiza tus finanzas',
-    description: 'Nuestra inteligencia artificial procesa ingresos, gastos e impuestos, detectando errores e inconsistencias automáticamente.'
+    title: 'La IA analiza todo',
+    description: 'Nuestra inteligencia artificial procesa ingresos, gastos e impuestos, detectando errores automáticamente.',
+    icon: 'brain',
+    time: '20 seg',
+    detects: ['Ingresos y egresos', 'IVA y percepciones', 'Inconsistencias'],
+    color: 'teal'
   },
   {
-    title: 'Analiza tu reporte',
-    description: 'Descargá un informe claro y estructurado con resultados listos para tomar decisiones contables inteligentes.'
+    title: 'Recibí tu reporte',
+    description: 'Obtené un informe claro y estructurado listo para tomar decisiones contables inteligentes.',
+    icon: 'check',
+    time: '5 seg',
+    outputs: ['Resumen', 'Excel', 'Alertas'],
+    color: 'green'
   }
 ]
-;
+
+const colors: Record<ColorKey, {
+  gradient: string;
+  shadow: string;
+  shadowHover: string;
+  border: string;
+  bg: string;
+  bgHover: string;
+  borderIcon: string;
+  text: string;
+}> = {
+  blue: {
+    gradient: 'from-blue-600 to-blue-700',
+    shadow: 'shadow-blue-500/30',
+    shadowHover: 'group-hover:shadow-blue-500/50',
+    border: 'group-hover:border-blue-500/50',
+    bg: 'bg-blue-500/10',
+    bgHover: 'group-hover:bg-blue-500/20',
+    borderIcon: 'border-blue-500/20',
+    text: 'text-blue-400'
+  },
+  teal: {
+    gradient: 'from-teal-500 to-teal-600',
+    shadow: 'shadow-teal-500/30',
+    shadowHover: 'group-hover:shadow-teal-500/50',
+    border: 'group-hover:border-teal-500/50',
+    bg: 'bg-teal-500/10',
+    bgHover: 'group-hover:bg-teal-500/20',
+    borderIcon: 'border-teal-500/20',
+    text: 'text-teal-400'
+  },
+  green: {
+    gradient: 'from-green-500 to-green-600',
+    shadow: 'shadow-green-500/30',
+    shadowHover: 'group-hover:shadow-green-500/50',
+    border: 'group-hover:border-green-500/50',
+    bg: 'bg-green-500/10',
+    bgHover: 'group-hover:bg-green-500/20',
+    borderIcon: 'border-green-500/20',
+    text: 'text-green-400'
+  }
+};
 ---
-<div class="flex flex-col md:flex-row md:gap-2 md:w-[60%] w:full justify-center items-center">
+
+<div class="w-full max-w-6xl mx-auto">
+
+  <!-- Connection Line (Desktop) -->
+  <div class="hidden lg:block relative h-1 mb-8 mx-auto" style="width: 66%; max-width: 600px;">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-teal-500 to-green-500 rounded-full"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-teal-500 to-green-500 rounded-full blur-sm opacity-50"></div>
+  </div>
+
+  <!-- Steps Grid -->
+  <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-center items-stretch">
+
     {steps.map((step, i) => (
-        <div class="rounded-lg bg-gradient-to-r from-blue-900 via-indigo-700 to-teal-600 p-0.5  w-full md:w-[24rem] h-auto mb-4 md:mb-0">
-            <div class="bg-neutral-950 text-slate-300 rounded-lg w-full h-full px-6 py-6 flex flex-col">
-              <span class="bg-zinc-900 hover:bg-slate-800 px-2 py-1 rounded-md text-slate-400 font-semibold w-32 text-center md:w-16">Paso {i + 1}</span>
-              <span class="text-white text-2xl mt-3">{step.title}</span>
-              <span class="text-slate-300 text-[0.8rem] mt-3">{step.description}</span>
-            </div>
+      <div class="group relative flex-1 max-w-sm mx-auto lg:mx-0">
+
+        <!-- Card -->
+        <div class={`relative h-full bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 transition-all duration-300 ${colors[step.color].border} hover:bg-zinc-900/90`}>
+
+          <!-- Number Badge - Positioned at top -->
+          <div class={`absolute -top-5 left-6 w-10 h-10 rounded-xl bg-gradient-to-br ${colors[step.color].gradient} flex items-center justify-center text-white text-lg font-bold shadow-lg ${colors[step.color].shadow} ${colors[step.color].shadowHover} group-hover:scale-110 transition-all duration-300`}>
+            {i + 1}
+          </div>
+
+          <!-- Step Label -->
+          <div class="flex items-center justify-between mb-4 mt-2">
+            <span class="text-slate-500 text-xs font-medium uppercase tracking-wider">Paso {i + 1}</span>
+            <span class={`flex items-center gap-1.5 text-xs ${colors[step.color].text}`}>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              {step.time}
+            </span>
+          </div>
+
+          <!-- Icon -->
+          <div class={`w-12 h-12 mb-4 rounded-xl ${colors[step.color].bg} border ${colors[step.color].borderIcon} flex items-center justify-center ${colors[step.color].bgHover} transition-all duration-300`}>
+            {step.icon === 'upload' && (
+              <svg class={`w-6 h-6 ${colors[step.color].text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+              </svg>
+            )}
+            {step.icon === 'brain' && (
+              <svg class={`w-6 h-6 ${colors[step.color].text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            )}
+            {step.icon === 'check' && (
+              <svg class={`w-6 h-6 ${colors[step.color].text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            )}
+          </div>
+
+          <!-- Content -->
+          <h3 class="text-white text-xl font-bold mb-3">{step.title}</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">{step.description}</p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            {step.formats && step.formats.map(format => (
+              <span class="px-2.5 py-1 bg-zinc-800/80 rounded-lg text-xs text-slate-400 border border-zinc-700/50">{format}</span>
+            ))}
+            {step.detects && step.detects.map(item => (
+              <span class={`flex items-center gap-1 px-2.5 py-1 ${colors[step.color].bg} rounded-lg text-xs ${colors[step.color].text} border ${colors[step.color].borderIcon}`}>
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                {item}
+              </span>
+            ))}
+            {step.outputs && step.outputs.map(output => (
+              <span class={`px-2.5 py-1 ${colors[step.color].bg} border ${colors[step.color].borderIcon} rounded-lg text-xs ${colors[step.color].text}`}>{output}</span>
+            ))}
+          </div>
+
         </div>
+
+        <!-- Arrow (Mobile) -->
+        {i < steps.length - 1 && (
+          <div class="lg:hidden flex justify-center py-4">
+            <svg class={`w-5 h-5 ${colors[step.color].text} animate-bounce`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </div>
+        )}
+
+      </div>
     ))}
+
+  </div>
+
+  <!-- Total Time Badge -->
+  <div class="mt-12 flex justify-center">
+    <div class="inline-flex items-center gap-4 bg-zinc-900/80 border border-zinc-800 rounded-2xl px-6 py-4 backdrop-blur-sm">
+      <div class="flex items-center gap-2 text-slate-400">
+        <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+        <span class="font-medium">Tiempo total:</span>
+      </div>
+      <span class="text-2xl font-black bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 text-transparent bg-clip-text">30 segundos</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-8 flex justify-center">
+    <a href="https://t.me/ClariTaxBot" target="_blank"
+       class="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-teal-500/40 hover:scale-105">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      <span>Probalo ahora gratis</span>
+      <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+      </svg>
+    </a>
+  </div>
+
 </div>
