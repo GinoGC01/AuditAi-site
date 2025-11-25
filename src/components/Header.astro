@@ -141,10 +141,6 @@ const navLinks = [
 
       <!-- Mobile Menu CTAs -->
       <div class="space-y-3">
-        <a href="/login"
-           class="flex items-center justify-center w-full px-4 py-3 text-slate-300 font-medium rounded-xl border border-zinc-700 hover:bg-zinc-800 hover:text-white transition-all duration-200">
-          Iniciar sesión
-        </a>
         <a href="/contacto"
            class="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/20">
           <span>Contacto</span>
@@ -182,39 +178,44 @@ const navLinks = [
 <div class="h-16 md:h-20"></div>
 
 <script>
-const header = document.getElementById('header') as HTMLElement
 const headerBg = document.getElementById('header-bg') as HTMLElement
 const hamburger = document.getElementById('hamburger') as HTMLButtonElement
 const hamburgerClose = document.getElementById('hamburger-close') as HTMLButtonElement
 const mobileMenu = document.getElementById('mobile-menu') as HTMLElement
 const mobileOverlay = document.getElementById('mobile-overlay') as HTMLElement
 
+// State management
+let isMenuOpen = false
+let ticking = false
+
 // Mobile menu functions
 const openMenu = () => {
   mobileMenu.classList.remove('translate-x-full')
   mobileOverlay.classList.remove('opacity-0', 'pointer-events-none')
   document.body.style.overflow = 'hidden'
+  isMenuOpen = true
 }
 
 const closeMenu = () => {
   mobileMenu.classList.add('translate-x-full')
   mobileOverlay.classList.add('opacity-0', 'pointer-events-none')
   document.body.style.overflow = ''
+  isMenuOpen = false
 }
 
+// Event listeners
 hamburger.addEventListener('click', openMenu)
 hamburgerClose.addEventListener('click', closeMenu)
 mobileOverlay.addEventListener('click', closeMenu)
 
 // Close menu on escape key
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeMenu()
+  if (e.key === 'Escape' && isMenuOpen) {
+    closeMenu()
+  }
 })
 
 // Header scroll effect
-let lastScrollY = 0
-let ticking = false
-
 const updateHeader = () => {
   const scrollY = window.scrollY
 
@@ -227,34 +228,27 @@ const updateHeader = () => {
     headerBg.classList.remove('opacity-100')
   }
 
-  // Hide header on scroll down, show on scroll up (optional)
-  if (scrollY > lastScrollY && scrollY > 100) {
-    header.style.transform = 'translateY(-100%)'
-  } else {
-    header.style.transform = 'translateY(0)'
-  }
-
-  lastScrollY = scrollY
   ticking = false
 }
 
-window.addEventListener('scroll', () => {
+const handleScroll = () => {
+  // Update header background
   if (!ticking) {
     requestAnimationFrame(updateHeader)
     ticking = true
   }
-})
+
+  // Close mobile menu on scroll (only if menu is open and on mobile)
+  if (window.innerWidth < 768 && isMenuOpen) {
+    closeMenu()
+  }
+}
+
+window.addEventListener('scroll', handleScroll)
 
 // Close mobile menu on resize to desktop
 window.addEventListener('resize', () => {
-  if (window.innerWidth >= 768) {
-    closeMenu()
-  }
-})
-
-// Close menu on scroll (mobile)
-window.addEventListener('scroll', () => {
-  if (window.innerWidth < 768 && !mobileMenu.classList.contains('translate-x-full')) {
+  if (window.innerWidth >= 768 && isMenuOpen) {
     closeMenu()
   }
 })
