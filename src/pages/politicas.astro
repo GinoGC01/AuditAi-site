@@ -1,107 +1,370 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
 ---
-<Layout title="Políticas de Privacidad y Términos | AuditAi" fill1="#224466" fill2="#224466">
-<!-- Wrapper -->
-    <main class="text-white md:py-6  md:px-40 md:max-w-[70%] md:m-auto px-6 py-4">
 
-      <!-- TITULO GENERAL -->
-      <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent mb-14 text-center">
-        Políticas de Privacidad & Términos de Uso
-      </h1>
+<Layout title="Políticas de Privacidad y Términos | AuditAi" fill1="#224466" fill2="#224466">
+
+  <main class="min-h-screen text-white">
+
+    <!-- Background Effects -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-20">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 rounded-full px-4 py-2 mb-6">
+          <svg class="w-4 h-4 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          <span class="text-slate-400 text-sm font-medium">Última actualización: Noviembre 2024</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          <span class="bg-gradient-to-r from-blue-500 to-teal-400 text-transparent bg-clip-text">Políticas de Privacidad</span>
+          <span class="text-white"> & Términos de Uso</span>
+        </h1>
+
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+          Tu confianza es nuestra prioridad. Conocé cómo protegemos tu información y los términos de uso de AuditAi.
+        </p>
+      </div>
+
+      <!-- Quick Navigation -->
+      <nav class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 mb-12">
+        <p class="text-slate-400 text-sm mb-4 font-medium">Navegación rápida</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="#privacidad" class="group flex items-center gap-3 px-4 py-3 bg-zinc-800/50 rounded-xl hover:bg-zinc-800 transition-all duration-200">
+            <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+              <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <span class="text-white font-medium">Políticas de Privacidad</span>
+          </a>
+          <a href="#terminos" class="group flex items-center gap-3 px-4 py-3 bg-zinc-800/50 rounded-xl hover:bg-zinc-800 transition-all duration-200">
+            <div class="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center group-hover:bg-teal-500/20 transition-colors">
+              <svg class="w-4 h-4 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <span class="text-white font-medium">Términos y Condiciones</span>
+          </a>
+        </div>
+      </nav>
 
       <!-- ================= PRIVACIDAD ================= -->
-      <section id="privacidad" class="mb-20">
-        <h2 class="text-3xl font-bold text-teal-400 mb-6">Políticas de Privacidad</h2>
+      <section id="privacidad" class="mb-20 scroll-mt-20">
 
-        <p class="mb-4 text-slate-300">
-          En <strong>AuditAi</strong> (en adelante, “la Plataforma”), valoramos y protegemos la privacidad de nuestros usuarios.
-          Esta política describe cómo recopilamos, utilizamos y protegemos tu información cuando utilizás nuestros servicios de análisis automatizado de documentos financieros y contables.
-        </p>
+        <!-- Section Header -->
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Políticas de Privacidad</h2>
+            <p class="text-slate-500 text-sm">Cómo protegemos tu información</p>
+          </div>
+        </div>
 
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">1. Información que recopilamos</h3>
-        <ul class="list-disc pl-6 text-slate-400 mb-4">
-          <li>Documentos cargados por el usuario (PDF, Excel u otros formatos financieros).</li>
-          <li>Datos de contacto como nombre, correo electrónico o razón social.</li>
-          <li>Información técnica (dirección IP, navegador, actividad de uso).</li>
-        </ul>
+        <!-- Intro Card -->
+        <div class="bg-blue-500/5 border border-blue-500/20 rounded-2xl p-6 mb-8">
+          <p class="text-slate-300 leading-relaxed">
+            En <strong class="text-white">AuditAi</strong> (en adelante, "la Plataforma"), valoramos y protegemos la privacidad de nuestros usuarios.
+            Esta política describe cómo recopilamos, utilizamos y protegemos tu información cuando utilizás nuestros servicios de análisis automatizado de documentos financieros y contables.
+          </p>
+        </div>
 
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">2. Uso de la información</h3>
-        <p class="mb-4 text-slate-300">
-          Utilizamos los datos únicamente para:
-        </p>
-        <ul class="list-disc pl-6 text-slate-400 mb-4">
-          <li>Procesar y generar reportes contables mediante inteligencia artificial.</li>
-          <li>Mejorar el rendimiento de la Plataforma.</li>
-          <li>Comunicaciones técnicas o de soporte.</li>
-        </ul>
+        <!-- Content Cards -->
+        <div class="space-y-6">
 
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">3. Conservación y eliminación</h3>
-        <p class="mb-4 text-slate-300">
-          Los documentos procesados pueden ser eliminados automáticamente luego de su análisis, salvo que el usuario opte por conservarlos en la cuenta.
-          <!-- REEMPLAZAR si es otra política -->
-        </p>
+          <!-- Card 1 -->
+          <article class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm">1</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Información que recopilamos</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Documentos cargados por el usuario (PDF, Excel u otros formatos financieros)</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Datos de contacto como nombre, correo electrónico o razón social</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Información técnica (dirección IP, navegador, actividad de uso)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
 
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">4. Derechos del usuario</h3>
-        <p class="mb-4 text-slate-300">
-          Podés solicitar acceso, rectificación o eliminación de tus datos escribiendo a
-          <a href="https://t.me/Ginoogg" target="_blank" class="text-teal-400 underline">Telegram</a>
-        </p>
+          <!-- Card 2 -->
+          <article class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm">2</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Uso de la información</h3>
+                <p class="text-slate-300 mb-4">Utilizamos los datos únicamente para:</p>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Procesar y generar reportes contables mediante inteligencia artificial</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Mejorar el rendimiento de la Plataforma</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Comunicaciones técnicas o de soporte</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm">3</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Conservación y eliminación</h3>
+                <p class="text-slate-300 leading-relaxed">
+                  Los documentos procesados pueden ser eliminados automáticamente luego de su análisis, salvo que el usuario opte por conservarlos en la cuenta.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm">4</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Derechos del usuario</h3>
+                <p class="text-slate-300 leading-relaxed">
+                  Podés solicitar acceso, rectificación o eliminación de tus datos escribiendo a
+                  <a href="https://t.me/Ginoogg" target="_blank"
+                     class="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 font-medium underline transition-colors">
+                    Telegram
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </section>
 
-      <section id="terminos">
-        <h2 class="text-3xl font-bold text-teal-400 mb-6">Términos y Condiciones de Uso</h2>
+      <!-- ================= TÉRMINOS ================= -->
+      <section id="terminos" class="mb-20 scroll-mt-20">
 
-        <p class="mb-4 text-slate-300">
-            El uso de la plataforma <strong>AuditAi</strong> implica la aceptación plena de los siguientes términos. Si el usuario no está de acuerdo con alguna de las condiciones aquí expuestas, deberá abstenerse de utilizar el servicio.
+        <!-- Section Header -->
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Términos y Condiciones de Uso</h2>
+            <p class="text-slate-500 text-sm">Condiciones para usar AuditAi</p>
+          </div>
+        </div>
+
+        <!-- Intro Card -->
+        <div class="bg-teal-500/5 border border-teal-500/20 rounded-2xl p-6 mb-8">
+          <p class="text-slate-300 leading-relaxed">
+            El uso de la plataforma <strong class="text-white">AuditAi</strong> implica la aceptación plena de los siguientes términos. Si el usuario no está de acuerdo con alguna de las condiciones aquí expuestas, deberá abstenerse de utilizar el servicio.
+          </p>
+        </div>
+
+        <!-- Content Cards -->
+        <div class="space-y-6">
+
+          <!-- Card 1 -->
+          <article class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-sm">1</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Naturaleza del servicio</h3>
+                <p class="text-slate-300 leading-relaxed">
+                  AuditAi es una herramienta automatizada de asistencia contable basada en inteligencia artificial. Analiza documentos financieros cargados por el usuario (como extractos bancarios en PDF o Excel) y genera reportes, resúmenes y hallazgos estimativos.
+                  <strong class="text-yellow-400"> No constituye asesoramiento contable, fiscal o legal profesional</strong>. Las recomendaciones generadas deben ser verificadas por un contador matriculado o responsable autorizado.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 - Warning Style -->
+          <article class="bg-yellow-500/5 border border-yellow-500/20 rounded-2xl p-8">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 font-bold text-sm">2</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Alcance y limitaciones del procesamiento</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-slate-300">
+                    <svg class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>AuditAi puede procesar documentos con un alcance máximo de <strong class="text-white">dos meses por carga</strong></span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-300">
+                    <svg class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>Los archivos se dividen en fragmentos ("chunks"). El sistema admite hasta <strong class="text-white">30 chunks por documento</strong>; si se supera ese límite, el análisis puede ser incompleto</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-300">
+                    <svg class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>Los resultados se generan en base a inferencias automáticas que pueden contener <strong class="text-white">errores, interpretaciones incorrectas o clasificaciones imprecisas</strong></span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-300">
+                    <svg class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>Para obtener resultados válidos, el usuario debe proporcionar <strong class="text-white">instrucciones claras y contexto específico</strong> en cada solicitud</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-sm">3</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Uso exclusivo de documentos propios</h3>
+                <p class="text-slate-300 leading-relaxed">
+                  AuditAi procesa solamente los documentos que pertenezcan al usuario registrado. El sistema filtra cada archivo mediante identificadores seguros (<code class="px-2 py-0.5 bg-zinc-800 rounded text-teal-400 text-sm">metadata.user_telegram_id</code>) y <strong class="text-white">rechaza automáticamente cualquier intento de acceder a documentos ajenos</strong>.
+                  El usuario declara ser propietario o estar autorizado para utilizar los documentos que carga.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-sm">4</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Responsabilidad del usuario</h3>
+                <p class="text-slate-300 mb-4">El usuario es responsable de:</p>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Verificar manualmente cualquier resultado generado por la plataforma</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>No utilizar los informes como documentación oficial sin revisión profesional</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>No cargar información ilegal, falsa o de terceros sin autorización</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 - Danger Style -->
+          <article class="bg-red-500/5 border border-red-500/20 rounded-2xl p-8">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 font-bold text-sm">5</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Exclusión de responsabilidad</h3>
+                <p class="text-slate-300 leading-relaxed">
+                  AuditAi se ofrece "tal como está", sin garantías de precisión absoluta. El usuario acepta que pueden existir <strong class="text-red-400">errores de interpretación, cálculos inexactos o fallos de lectura</strong>. Bajo ninguna circunstancia AuditAi será responsable por decisiones financieras, fiscales o legales tomadas exclusivamente en base a los resultados generados.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-sm">6</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-white mb-4">Jurisdicción</h3>
+                <p class="text-slate-300 leading-relaxed">
+                  Cualquier disputa relacionada con el uso del servicio será resuelta bajo las leyes de <strong class="text-white">Argentina</strong>, salvo que se acuerde lo contrario por escrito.
+                </p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <div class="bg-gradient-to-br from-blue-900/30 to-teal-900/30 border border-zinc-800 rounded-2xl p-8 text-center">
+        <div class="flex justify-center mb-4">
+          <div class="w-16 h-16 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">¿Tenés alguna duda?</h3>
+        <p class="text-slate-400 mb-6 max-w-md mx-auto">
+          Para consultas legales, soporte o cualquier pregunta sobre nuestros términos, escribinos directamente.
         </p>
+        <a href="https://t.me/Ginoogg" target="_blank"
+           class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-teal-500/40 hover:scale-105">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+          <span>Contactar por Telegram</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+      </div>
 
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">1. Naturaleza del servicio</h3>
-        <p class="mb-4 text-slate-300">
-            AuditAi es una herramienta automatizada de asistencia contable basada en inteligencia artificial. Analiza documentos financieros cargados por el usuario (como extractos bancarios en PDF o Excel) y genera reportes, resúmenes y hallazgos estimativos.
-            <strong>No constituye asesoramiento contable, fiscal o legal profesional</strong>. Las recomendaciones generadas deben ser verificadas por un contador matriculado o responsable autorizado.
-        </p>
+      <!-- Back to top -->
+      <div class="mt-12 text-center">
+        <a href="#" class="inline-flex items-center gap-2 text-slate-500 hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+          </svg>
+          <span class="text-sm font-medium">Volver arriba</span>
+        </a>
+      </div>
 
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">2. Alcance y limitaciones del procesamiento</h3>
-        <ul class="list-disc pl-6 text-slate-400 mb-4">
-            <li>AuditAi puede procesar documentos con un alcance máximo de <strong>dos meses por carga</strong>.</li>
-            <li>Los archivos se dividen internamente en fragmentos ("chunks") para su análisis. El sistema admite hasta <strong>30 chunks por documento</strong>; si se supera ese límite, el análisis puede ser incompleto.</li>
-            <li>Los resultados se generan en base a inferencias automáticas que pueden contener <strong>errores, interpretaciones incorrectas o clasificaciones imprecisas</strong>.</li>
-            <li>Para obtener resultados válidos, el usuario debe proporcionar <strong>instrucciones claras y contexto específico</strong> en cada solicitud.</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">3. Uso exclusivo de documentos propios</h3>
-        <p class="mb-4 text-slate-300">
-            AuditAi procesa solamente los documentos que pertenezcan al usuario registrado. El sistema filtra cada archivo mediante identificadores seguros (<em>metadata.user_telegram_id</em>) y <strong>rechaza automáticamente cualquier intento de acceder a documentos ajenos</strong>.
-            El usuario declara ser propietario o estar autorizado para utilizar los documentos que carga.
-        </p>
-
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">4. Responsabilidad del usuario</h3>
-        <p class="mb-4 text-slate-300">
-            El usuario es responsable de:
-        </p>
-        <ul class="list-disc pl-6 text-slate-400 mb-4">
-            <li>Verificar manualmente cualquier resultado generado por la plataforma.</li>
-            <li>No utilizar los informes como documentación oficial sin revisión profesional.</li>
-            <li>No cargar información ilegal, falsa o de terceros sin autorización.</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">5. Exclusión de responsabilidad</h3>
-        <p class="mb-4 text-slate-300">
-            AuditAi se ofrece “tal como está”, sin garantías de precisión absoluta. El usuario acepta que pueden existir <strong>errores de interpretación, cálculos inexactos o fallos de lectura</strong>. Bajo ninguna circunstancia AuditAi será responsable por decisiones financieras, fiscales o legales tomadas exclusivamente en base a los resultados generados.
-        </p>
-
-        <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-2">6. Jurisdicción</h3>
-        <p class="mb-4 text-slate-300">
-            Cualquier disputa relacionada con el uso del servicio será resuelta bajo las leyes de <strong>Argentina</strong>, salvo que se acuerde lo contrario por escrito.
-        </p>
-
-        <p class="mt-8 text-center text-slate-400">
-            Para consultas legales o soporte, escribir a
-            <a href="https://t.me/Ginoogg" target="_blank" class="text-teal-400 underline">Telegram</a>.
-        </p>
-        </section>
-
-    </main>
+    </div>
+  </main>
 </Layout>
